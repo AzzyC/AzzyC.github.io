@@ -6,12 +6,11 @@ body {
 a {
 	color: red;
 }
-p, h1, h2, h3, li {
+p, h2, h3, li {
 	background: #555;
 	padding: 10px 10px 10px 10px;
 }
 
-br {
-	background: #555;
-	padding: 10px 10px 10px 10px;
+h1 {
+	colour:red;
 }
