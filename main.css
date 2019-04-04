@@ -11,6 +11,7 @@ p, h2, h3, li {
 	padding: 10px 10px 10px 10px;
 }
 
-h1 {
-	colour:red;
+.headline {
+	color:red;
+
 }
