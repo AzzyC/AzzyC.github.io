@@ -6,6 +6,7 @@ body {
 
 .round {
 	border-radius: 50%;
+	display:inline;
 }
 .site {
       padding-top: 50px;
@@ -28,6 +29,7 @@ a:hover {
 
 h1 {
 	color: orange;
+	display:inline;
 }
 
 h2, h3 {
