@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> Lil' GRaf Builds</title>
-		<link rel="stylesheet" type="text/css" href="./main.css">
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta name="description" content="ROM choices for universal9810 device family: S9(+), N9" />
+			<meta name="keywords" content="S9,ROMs,GSI,N9,Lineage,Samsung,starlte," />
+			<meta name="author" content="Azmath Choudhury" />
+			<title> Lil' G-Raf</title>
+			<link rel="icon" href="./favicon.ico" />
+			<link rel="stylesheet" type="text/css" href="./main.css" />
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+		</head>
+	<body>
+
+		<div class="site1">
+				<img src="./me.png" alt="Lil' GRaf when he was young wee boi" title="Lil' GRaf when he was young wee boi" />
+				<h1 class="pagetitle">Lil' G-Raf</h1>
+		<div class="ouipanel">	
+				<ul>
+					<li> <button class="buttondisabled" disabled="disabled">Home</button> </li>
+					<li> <button class="nav" onclick="window.location.href = './guides.html';">Guides</button> </li>
+				</ul>
+		</div>
+
+		<div class="ouipanel">	
+				<h2 class="dailydr" >Daily Driver</h2>
+				<p>
+					<a class="button" target="_blank" href="https://drive.google.com/open?id=1jxbpTuJN_nmFJdzYVa24xTMRwVq5pwVQ"><button class="losbutton" autofocus="autofocus"><i class="fas fa-cloud-download-alt"></i> LineageOS 15.1</button></a>
+				</p>
+				<p>
+					<a class="button" target="_blank" href="https://forum.xda-developers.com/galaxy-s9/samsung-galaxy-s9--s9-cross-device-development/rom-t3927314"><button class="xdabutton"><i class="fab fa-wpforms"></i> XDA</button></a>
+				</p>
+			<hr class="breaker"/>
+				<p>
+				<h2 class="losdiff"> Differences from 'Official' LineageOS:</h2>
+				</p>
+				<p class="losdesc">• Reverted back to S9/+ Oreo vendor
+					<br/>• <a target="_blank" href="https://forum.xda-developers.com/galaxy-s9/samsung-galaxy-s9--s9-cross-device-development/kernel-endurance-kernel-v1-0-t3849434">Endurance Kernel</a> is baked into the builds
+					<br/>• Debloated System Packages 
+					<br/>• <a target="_blank" href="https://t.me/joinchat/G9I-dUeaRl9wdAwFhrKR1A">GCam</a> Support 
+					<br/>• Supports final Oreo BSB1 Firmware
+					<br>• Check GitHub commit history per repository for more changes
+				</p>
+		</div>
+
+		<div class="ouipanel">
+				<h2>Other Builds</h2>
+				<p>
+					<a class="button" target="_blank" href="https://drive.google.com/open?id=1uoDYwMHDLoR_iChprpFBKbbypH6KjPLI"><button class="pebutton"><i class="fas fa-cloud-download-alt"></i> PE sGSI</button></a>
+				<hr class="breaker"/>
+				<p>
+					Vendor: <a target="_blank" href="https://drive.google.com/file/d/1ml1f-O78kv-JprO9-b-kqBTfCL-1DNk3/view?usp=sharing">BRK3<i class="fas fa-download"></i></a>
+				</p>
+		</div>
 		
-	</head>
-<body>
-	<div class="site">
-		<img class="round" src="./me.jpg" alt="Lil' GRaf when he was young wee boi" style="width: 100px;height: 100px;">
-		<h1> Welcome to my first website!</h1>
-		<p> I am currently learning how to develop a website, so you can <em>expect</em> this site to get better! </p> 
-		<p><strong> What are you using as a daily driver?</strong>
-		<br> If I am not using OneUI, then I am using an Unofficial build of Lineage which you can find below: </br></p>
-		<h3><a href="https://drive.google.com/open?id=1jxbpTuJN_nmFJdzYVa24xTMRwVq5pwVQ">Lineage 15.1 - starxxx</a></h3>
-		<h4> Differences from 'Official' LineageOS:</h4>
-		<ul>
-			<li>Reverted back to S9/+ Oreo vendor </li>
-			<li>Dual Speaker is now fixed </li>
-			<li>Fast fingerprint is back </li>
-			<li>GCam & lib mod can work, as no longer Note vendor </li>
-			<li>You can flash custom kernels again, if you so wish! </li>
-			<li>Added force touch to wake</li>
-		</ul>
-		<h1>Other Builds:</h1>
-		<h3><a href="https://drive.google.com/open?id=1uoDYwMHDLoR_iChprpFBKbbypH6KjPLI">Latest PE sGSI Build (26/03/2019)</a></h3>
+		<div class="ouipanel">
+				<h2><i class="fas fa-link"></i> Links</h2>
+				<p>
+					<a class="button" target="_blank" href="https://github.com/AzzyC"><button class="githubbutton"><i class="fab fa-github"></i> GitHub</button></a>
+					<a class="button" target="_blank" href="https://t.me/ops9810"><button class="tgrambutton"><i class="fab fa-telegram-plane"></i> Telegram</button></a>
+				</p>
+				<hr class="breaker"/>
 		
-		<p> Requirements to boot above build (Tested on):
-		<br> Firmware: <a href="http://cloud.timo-ehlers.de/S9%28%2B%29/Firmware/Flashable_G96XF_Firmware_TWRP_BRK3_r18.zip">BRK3</a>
-		<br> Vendor: <a href="http://cloud.timo-ehlers.de/S9%28%2B%29/Vendor/Flashable_G96XF_Vendor_BRK3_r14.zip">BRK3</a> </p>
-		
-		<h1>FAQ</h1>
-		<p><strong>Q: Why is there no source?</strong><br>
-		A: I suck at using GitHub, but this should be no excuse! It is something I really should learn to use and could also save me building time :p </p>
-		<p><strong>Q: How often will you build?</strong><br>
-		A: I build when I find time away from assignments, which is unfortunately rare :( Just keep tabs on this site, I may surpirise! </p>
-	</div>
-</body>
+			<footer>
+				<h2>FAQ</h2>
+				<p class="qsfaq">Q: How often will you build? </p>
+				<p>
+					A: I build when I find time away from University, which is unfortunately rare &#128577 Just keep tabs on this site, I may surpirise!
+				</p>
+				<hr class="breaker" />
+				<p class="qsfaq">
+					Q: Why is this page so 'OneUI' if it is for AOSP Builds?
+				</p>
+				<p>
+					A: Irony.
+				</p>
+			</footer>
+		</div>
+
+	</body>
 </html>
