@@ -140,19 +140,13 @@ button {
 }
 
 .nav {
-	display: inline-block;
 	max-width: 100px;
-	float: left;
-	margin: 0px 30px;
 }
 
 .buttondisabled {
+	max-width: 100px;
 	cursor: default;
 	color: #9b9b9b;
-	max-width: 100px;
-	display: inline-block;
-	margin: 0px 30px;
-	float: left;
 }
 
 .buttondisabled:hover {
@@ -195,6 +189,12 @@ button:focus {
 	border-color: #404244;
 }
 
+ul {
+	list-style: none;
+	margin: 5px;
+}
+
 li {
 	display: inline-block;
+	margin: 0px 25px;
 }
