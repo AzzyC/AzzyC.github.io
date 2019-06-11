@@ -28,8 +28,7 @@ h1 {
 
 .pagetitle {
 	font-size: 24pt;
-	margin-top: 30px;
-	margin-bottom: 70px;
+	margin-top: 150px;
 }
 
 h2 {
@@ -117,10 +116,25 @@ button:focus {
 	border-color: #404244;
 }
 
-ul {
+input {
+	color: white;
 	display: inline-block;
+	border-color: orange;
+	background: #3b3b3b;
+	border-radius: 25px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 60px;
+	margin-top: 30px;
 }
 
-li {
-	margin: 5px;
+.searchbar {
+	height: 30px;
+	width: 200px;
+	padding-left: 15px;
+}
+
+.searchgo {
+	height: 35px;
+	width: 70px;
 }
