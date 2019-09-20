@@ -50,7 +50,7 @@ p {
 
 .ouipanel {
 	background: #222222;
-	border-radius: 25px;	
+	border-radius: 25px;
 	max-width: 1200px;
 	padding: 0px 5px;
 	margin-top: 30px;
@@ -100,7 +100,7 @@ button:hover {
 button:focus {
 	outline-style: groove;
 	outline-width: 1px;
-	outline-offset: 2px; 
+	outline-offset: 2px;
 	outline-color: #404244;
 }
 
@@ -124,7 +124,6 @@ input {
 	border-radius: 25px;
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 60px;
 	margin-top: 30px;
 }
 
