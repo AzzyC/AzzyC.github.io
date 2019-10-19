@@ -159,17 +159,17 @@ input {
 }
 
 .dot1 {
-	background-color: blue;
+	background-color:  #2980b9;
 }
 
 .dot2 {
-	background-color: red;
+	background-color:  #e74c3c;
 }
 
 .dot3 {
-	background-color: yellow;
+	background-color: #FFCE44;
 }
 
 .dot4 {
-	background-color: green;
+	background-color: #18A05E;
 }
