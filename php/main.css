@@ -13,6 +13,7 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
+	margin-top: 75px;
 }
 
 div {
@@ -28,7 +29,7 @@ h1 {
 
 .pagetitle {
 	font-size: 24pt;
-	margin-top: 150px;
+	margin-top: 20px;
 }
 
 h2 {
@@ -53,7 +54,7 @@ p {
 	border-radius: 25px;
 	max-width: 1200px;
 	padding: 0px 5px;
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 a {
@@ -136,4 +137,38 @@ input {
 .searchgo {
 	height: 35px;
 	width: 70px;
+}
+
+.invispanel {
+	text-align: center;
+	border-radius: 25px;
+	max-width: 1200px;
+	height: 25px;
+	padding: 0px 5px;
+	margin-top: 15px;
+}
+
+#dot {
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.dot1 {
+	background-color: blue;
+}
+
+.dot2 {
+	background-color: red;
+}
+
+.dot3 {
+	background-color: yellow;
+}
+
+.dot4 {
+	background-color: green;
 }
