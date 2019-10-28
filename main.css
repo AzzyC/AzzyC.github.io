@@ -1,0 +1,41 @@
+body {
+	background: black;
+	font-family: Arial;
+	color: #FFF;
+}
+
+.round {
+	border-radius: 50%;
+}
+.site {
+      padding-top: 50px;
+      padding-right: 80px;
+      padding-bottom: 50px;
+      padding-left: 80px;
+}
+a {
+	color: orange;
+}
+
+a:visited {
+	color: peach;
+}
+
+a:hover {
+	color: #FEB494;
+}
+
+
+h1 {
+	color: orange;
+}
+
+h2, h3 {
+	background: #212121;
+	padding: 10px 10px 10px 10px;
+	font-weight: bold;
+}
+
+p {
+	font-size: 12pt;
+}
