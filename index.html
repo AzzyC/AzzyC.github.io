@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html>
 		<head>
+			<a class="weatherwidget-io" href="https://forecast7.com/en/53d48n2d24/manchester/" data-label_1="MANCHESTER" data-label_2="WEATHER" data-font="Arimo" data-icons="Climacons" data-days="5" data-theme="dark" >MANCHESTER WEATHER</a>
+			<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+			</script>
+			<title>	Azzy PHP </title>
+			<link rel="icon" href="./images/favicon.ico" />
 			<meta charset="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<meta name="description" content="ROM choices for universal9810 device family: S9(+), N9" />
-			<meta name="keywords" content="S9,ROMs,GSI,N9,Lineage,Samsung,starlte," />
+			<meta name="description" content="Azmath's Personal Homepage" />
 			<meta name="author" content="Azmath Choudhury" />
-			<title> Lil' G-Raf</title>
-			<link rel="icon" href="./images/favicon.ico" />
 			<link rel="stylesheet" type="text/css" href="./main.css" />
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 		</head>
 	<body>
-
-		<div class="site1">
-				<img src="./images/me.png" alt="Lil' GRaf when he was young wee boi" title="Lil' GRaf when he was young wee boi" />
-				<h1 class="pagetitle">Lil' G-Raf</h1>
-		<div class="ouipanel">	
-				<ul>
-					<li> <button class="buttondisabled" disabled="disabled">Home</button> </li>
-					<li> <button class="nav" onclick="window.location.href = './guides.html';">Guides</button> </li>
-				</ul>
+		<div>
+			<img src="./images/me.png" alt="Lil' GRaf when he was young wee boi" title="Lil' GRaf when he was young wee boi" />
+			<h1 class="pagetitle"> Azmath Choudhury </h1>
+			<!-- This is just for the Google Search Bar -->
+			<form method="get" action="https://www.google.com/search" target="_blank">
+				<div>
+					<table border="0" align="center" cellpadding="0">
+						<tr><td>
+						<input autofocus class="searchbar" type="text" name="q" size="25" maxlength="255" value="Enter Google Search"
+						onfocus="if(this.value==this.defaultValue)this.value=''; this.style.color='white';" onblur="if(this.value=='')this.value=this.defaultValue; "/>
+						<input class="searchgo" type="submit" value="Go!" align="center" />
+						<input type="hidden" name="sitesearch" /></td></tr>
+					</table>
+				</div>
+			</form>
+			<!-- End of Search Bar -->
+			<div class="invispanel">
+				<span id="dot" class="dot1"></span>
+				<span id="dot" class="dot2"></span>
+				<span id="dot" class="dot3"></span>
+				<span id="dot" class="dot4"></span>
+			</div>
+			<!-- This is just for the YouTube Search Bar -->
+			<form method="get" action="https://www.youtube.com/search" target="_blank">
+				<div>
+					<table border="0" align="center" cellpadding="0">
+						<tr><td>
+						<input class="searchbar" type="text" name="q" size="25" maxlength="255" value="Enter YouTube Search"
+						onfocus="if(this.value==this.defaultValue)this.value=''; this.style.color='white';" onblur="if(this.value=='')this.value=this.defaultValue; "/>
+						<input class="searchgo" type="submit" value="Go!" align="center" />
+						<input type="hidden" name="sitesearch" /></td></tr>
+					</table>
+				</div>
+			</form>
+			<!-- End of Search Bar -->
+			<div class="ouipanel">
+			<p> <a target="_blank" class="button" href="https://console.cloud.google.com/compute/instances?project=savvy-celerity-228815&instancessize=50">
+					<button> <i class="fab fa-google"></i>oogle Cloud </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" class="button" href="https://www.netflix.com/title/80217708">
+					<button> <i class="fas fa-tv"></i> Netflix </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" class="button" href="https://my.mmu.ac.uk/">
+					<button> <i class="fas fa-university"></i> MyMMU </button> </a>
+			</p>
+			<p>
+				<a target="_blank" href="https://drive.google.com/drive/u/1/my-drive">
+					<button> <i class="fab fa-google-drive"></i> Drive </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" href="./dist/index.html">
+					<button> <i class="fab fa-github"></i> GitHub </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" href="https://www.diffchecker.com/diff">
+					<button> <i class="fas fa-angle-double-right"></i>Diff Checker </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" href="https://mail.google.com/mail/u/0/#inbox">
+					<button> <i class="fas fa-inbox"></i> GMail </button>
+				</a>
+			</p>
+			<p>
+				<a target="_blank" href="https://www.thesaurus.com/">
+					<button> <i class="fas fa-book-dead"></i> Thesaurus </button>
+				</a>
+			</p>
+			</div>
 		</div>
-
-		<div class="ouipanel">	
-				<h2 class="dailydr" >Daily Driver</h2>
-				<p>
-					<a class="button" target="_blank" href="https://drive.google.com/open?id=1jxbpTuJN_nmFJdzYVa24xTMRwVq5pwVQ"><button class="losbutton" autofocus="autofocus"><i class="fas fa-cloud-download-alt"></i> LineageOS 15.1</button></a>
-				</p>
-				<p>
-					<a class="button" target="_blank" href="https://forum.xda-developers.com/galaxy-s9/samsung-galaxy-s9--s9-cross-device-development/rom-t3927314"><button class="xdabutton"><i class="fab fa-wpforms"></i> XDA</button></a>
-				</p>
-			<hr class="breaker"/>
-				<p>
-				<h2 class="losdiff"> Differences from 'Official' LineageOS:</h2>
-				</p>
-				<p class="losdesc">• Reverted back to S9/+ Oreo vendor
-					<br/>• <a target="_blank" href="https://forum.xda-developers.com/galaxy-s9/samsung-galaxy-s9--s9-cross-device-development/kernel-endurance-kernel-v1-0-t3849434">Endurance Kernel</a> is baked into the builds
-					<br/>• Debloated System Packages 
-					<br/>• <a target="_blank" href="https://t.me/joinchat/G9I-dUeaRl9wdAwFhrKR1A">GCam</a> Support 
-					<br/>• Supports final Oreo BSB1 Firmware
-					<br>• Check GitHub commit history per repository for more changes
-				</p>
+		<!--SpeedTest Widget code start-->
+		<div class="speedtest">
+			<iframe src="https://openspeedtest.com/Get-widget.php?Auto=3"></iframe>
 		</div>
-
-		<div class="ouipanel">
-				<h2>Other Builds</h2>
-				<p>
-					<a class="button" target="_blank" href="https://drive.google.com/open?id=1uoDYwMHDLoR_iChprpFBKbbypH6KjPLI"><button class="pebutton"><i class="fas fa-cloud-download-alt"></i> PE sGSI</button></a>
-				<hr class="breaker"/>
-				<p>
-					Vendor: <a target="_blank" href="https://drive.google.com/file/d/1ml1f-O78kv-JprO9-b-kqBTfCL-1DNk3/view?usp=sharing">BRK3<i class="fas fa-download"></i></a>
-				</p>
-		</div>
-		
-		<div class="ouipanel">
-				<h2><i class="fas fa-link"></i> Links</h2>
-				<p>
-					<a class="button" target="_blank" href="./dist/index.html"><button class="githubbutton"><i class="fab fa-github"></i> GitHub</button></a>
-					<a class="button" target="_blank" href="https://t.me/ops9810"><button class="tgrambutton"><i class="fab fa-telegram-plane"></i> Telegram</button></a>
-				</p>
-				<hr class="breaker"/>
-		
-			<footer>
-				<h2>FAQ</h2>
-				<p class="qsfaq">Q: How often will you build? </p>
-				<p>
-					A: I build when I find time away from University, which is unfortunately rare &#128577 Just keep tabs on this site, I may surpirise!
-				</p>
-				<hr class="breaker" />
-				<p class="qsfaq">
-					Q: Why is this page so 'OneUI' if it is for AOSP Builds?
-				</p>
-				<p>
-					A: Irony.
-				</p>
-			</footer>
-		</div>
-
+		<!--SpeedTest Widget code end-->
 	</body>
 </html>
