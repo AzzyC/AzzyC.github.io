@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<title> Etihad Admin </title>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta name="description" content="Etihad Administrator tools" />
+			<meta name="author" content="Azmath Choudhury" />
+      <meta http-equiv="refresh" content="10">
+			<link rel="stylesheet" type="text/css" href="./main.css" />
+      <link rel="icon" href="../images/syringe.ico" />
+		</head>
+	<body>
+
+    <div class="pod">
+
+      <p class="title"> Pod Clerk </p>
+
+      <p class="time"> Current Time: <input type="text" id="currentTime"> </p>
+        <script>
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.getElementById("currentTime").value = time;
+        </script>
+
+      <p class="time"> Waiting Time: <input type="text" id="waitTime"> </p>
+        <script>
+        var today = new Date();
+        var time = today.getHours() + ":" + (today.getMinutes()+15);
+        document.getElementById("waitTime").value = time;
+        </script>
+
+      </div>
+
+      <div class="menu">
+        <a href="https://outcomes4health.org/o4h/">
+          <button class="oforh">outcomes4health</button>
+        </a>
+
+      </div>
+
+      <p class="notes">
+        COVID Site: y5t8u
+      </p>
+
+  </body>
+</html>
