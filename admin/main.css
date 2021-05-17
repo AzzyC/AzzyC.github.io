@@ -2,64 +2,67 @@ body {
 	background: #005EB8;
 	font-family: 'Khula', sans-serif;
 	color: #FFF;
+  margin: 2vw 2vw;
 }
 
 p {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2vw;
 }
 
 p.notes {
-  margin-top: 5px;
-  margin-left: 15%;
+  margin-top: 0.5vw;
+  margin-left: 13.5vw;
   text-align: left;
+  font-size: 1.75vw;
 }
 
 p.time {
-  font-size: 65pt;
-  margin-bottom: 50px;
+  font-size: 5.5vw;
+  margin-bottom: 3.5vw;
 }
 
 p.title {
-  font-size: 30pt;
-  margin-bottom: 30px;
+  font-size: 3.5vw;
+  margin-bottom: 5vw;
 }
 
 
 input {
-  font-size: 60pt;
+  font-size: 5vw;
   border: none;
   text-align: center;
-  width: 350px;
+  width: 23vw;
   color: white;
   background: #1c64bd;
   border-radius: 30px;
 }
 
 div.menu {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 10vw;
+  margin-right: 10vw;
 	background: #1c64bd;
 	border-radius: 20px;
-  height: 100px;
+  height: 6.5vw;
 	margin-top: 75px;
 }
 
 button {
 	background: ;
   color: ;
-	font-size: 25pt;
+	font-size: 2vw;
 	text-align: center;
 	border-radius: 25px;
 	border-color: white;
 	border-width: 1px;
-	padding: 10px 10px;
+	padding: 0.5vw 0.5vw;
 	cursor: pointer;
 	display: inline-block;
-	width: 300px;
+	width: 20vw;
+  height: 4vw;
 	transition-duration: 0.3s;
 	outline: transparent;
-	margin: 20px 20px;
+	margin: 1.2vw 1.5vw;
 }
 
 button.oforh {
