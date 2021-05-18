@@ -1,7 +1,12 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
 	background: #005EB8;
+  color: #FFF;
 	font-family: 'Khula', sans-serif;
-	color: #FFF;
+  font-size: 0;
   margin: 2vw 2vw;
 }
 
@@ -11,68 +16,85 @@ p {
 }
 
 p.notes {
-  margin-top: 0.5vw;
-  margin-left: 13.5vw;
-  text-align: left;
   font-size: 1.75vw;
+  text-align: left;
+  margin-left: 12vw;
+  margin-top: 0.5vw;
 }
 
 p.time {
-  font-size: 5.5vw;
+  font-size: 7vw;
   margin-bottom: 3.5vw;
 }
 
-p.title {
-  font-size: 3.5vw;
-  margin-bottom: 5vw;
+#topTime {
+  margin-top: 6vw;
 }
 
-
 input {
-  font-size: 5vw;
-  border: none;
-  text-align: center;
-  width: 23vw;
-  color: white;
+  font-size: 7vw;
   background: #1c64bd;
+  color: white;
+  text-align: center;
+  width: 25vw;
+  border: none;
   border-radius: 30px;
 }
 
 div.menu {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
 	background: #1c64bd;
 	border-radius: 20px;
-  height: 6.5vw;
 	margin-top: 75px;
+  height: 6vw;
 }
 
 button {
-	background: ;
-  color: ;
-	font-size: 2vw;
+	font-size: 2.75vw;
 	text-align: center;
 	border-radius: 25px;
 	border-color: white;
-	border-width: 1px;
-	padding: 0.5vw 0.5vw;
-	cursor: pointer;
-	display: inline-block;
-	width: 20vw;
-  height: 4vw;
+	border-width: 2px;
+  margin-top: 1vw;
+  margin-left: 2.75vw;
 	transition-duration: 0.3s;
-	outline: transparent;
-	margin: 1.2vw 1.5vw;
+  width: 25vw;
+  height: 4vw;
+  outline: transparent;
+  cursor: pointer;
 }
 
 button.oforh {
-  color: #FFA300;
-  background: #004fb0;
+  color: #F9A825;
+  background: #1976D2;
+}
+
+button.nhs {
+  color: #d9d9d9;
+  background: #005EB8;
+}
+
+button.simply {
+  color: #06ADEF;
+  background: #ebebeb;
+  border: none;
 }
 
 button:hover {
-	color: orange;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button.oforh:hover {
+		color: #ff9b0f;
+}
+
+button.nhs:hover {
+  color: white;
+}
+
+button.simply:hover {
+  color: #00ccff;
 }
 
 button:focus {
@@ -80,4 +102,39 @@ button:focus {
 	outline-width: 1px;
 	outline-offset: 2px;
 	outline-color: #404244;
+}
+
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+
+  p.time {
+    font-size: 50px;
+  }
+
+  #topTime {
+    margin-top: 12vw;
+  }
+
+  p.notes {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  div.menu {
+    height: 52.5vw;
+  }
+
+  input {
+    font-size: 50px;
+    width: 250px;
+  }
+
+  button {
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    margin-top: 3vw;
+    margin-left: 9.5vw;
+  }
 }

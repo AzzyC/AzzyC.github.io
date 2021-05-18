@@ -14,9 +14,7 @@
 
     <div class="pod">
 
-      <p class="title"> Pod Clerk </p>
-
-      <p class="time"> Current Time: <input type="text" id="currentTime"> </p>
+      <p class="time" id="topTime"> Current Time: <input type="text" id="currentTime"> </p>
         <script>
         var today = new Date();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -33,13 +31,24 @@
       </div>
 
       <div class="menu">
-        <a href="https://outcomes4health.org/o4h/">
+
+        <a target="_blank" href="https://outcomes4health.org/o4h/">
           <button class="oforh">outcomes4health</button>
+        </a>
+
+        <a target="_blank" href="#">
+          <button class="nhs"><em><b>NHS</b></em> Booking</button>
+        </a>
+
+        <a target="_blank" href="https://simplybook.me/en/">
+          <button class="simply"><b>SimplyBook</b></button>
         </a>
 
       </div>
 
       <p class="notes">
+        Notes:
+        <br>
         COVID Site: y5t8u
       </p>
 
