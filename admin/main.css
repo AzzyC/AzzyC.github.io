@@ -18,7 +18,7 @@ p {
 p.notes {
   font-size: 1.75vw;
   text-align: left;
-  margin-left: 12vw;
+  margin-left: 9vw;
   margin-top: 0.5vw;
 }
 
@@ -31,14 +31,20 @@ p.time {
   margin-top: 6vw;
 }
 
-input {
+#currentTime, input {
+	font-family: 'Khula', sans-serif;
   font-size: 7vw;
   background: #1c64bd;
   color: white;
   text-align: center;
-  width: 25vw;
+  width: 30vw;
+  outline: none;
   border: none;
   border-radius: 30px;
+}
+
+#currentTime {
+  padding: 3px 18.95px 3px 25.3px;
 }
 
 div.menu {
@@ -57,7 +63,7 @@ button {
 	border-color: white;
 	border-width: 2px;
   margin-top: 1vw;
-  margin-left: 2.75vw;
+  margin-left: 5.5%;
 	transition-duration: 0.3s;
   width: 25vw;
   height: 4vw;
@@ -110,6 +116,7 @@ button:focus {
 
   p.time {
     font-size: 50px;
+    margin-bottom: 1vw;
   }
 
   #topTime {
@@ -118,11 +125,13 @@ button:focus {
 
   p.notes {
     font-size: 20px;
-    margin-top: 20px;
+    text-align: center;
+    margin-left: inherit;
   }
 
   div.menu {
-    height: 52.5vw;
+    margin-bottom: 2vw;
+    height: 197.5px;
   }
 
   input {
@@ -130,11 +139,17 @@ button:focus {
     width: 250px;
   }
 
+  #currentTime {
+    font-size: 50px;
+    padding-left: 28.15px;
+    padding-right: 29.25px;
+  }
+
   button {
     font-size: 25px;
-    width: 250px;
+    width: 65vw;
     height: 50px;
     margin-top: 3vw;
-    margin-left: 9.5vw;
+    margin-left: 10vw;
   }
 }

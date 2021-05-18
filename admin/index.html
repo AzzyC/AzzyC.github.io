@@ -14,14 +14,13 @@
 
     <div class="pod">
 
-      <p class="time" id="topTime"> Current Time: <input type="text" id="currentTime"> </p>
-        <script>
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        document.getElementById("currentTime").value = time;
-        </script>
+      <p class="time" id="topTime"> Current Time: <span id="currentTime"></span> </p>
+				<script>
+				var today = new Date();
+				document.getElementById("currentTime").innerHTML = today.toLocaleTimeString();
+				</script>
 
-      <p class="time"> Waiting Time: <input type="text" id="waitTime"> </p>
+      <p class="time"> Waiting Time: <input readonly type="text" id="waitTime"> </p>
         <script>
         var today = new Date();
         var time = today.getHours() + ":" + (today.getMinutes()+15);
@@ -32,7 +31,7 @@
 
       <div class="menu">
 
-        <a target="_blank" href="https://outcomes4health.org/o4h/">
+        <a style="float:left;" target="_blank" href="https://outcomes4health.org/o4h/">
           <button class="oforh">outcomes4health</button>
         </a>
 
@@ -47,9 +46,7 @@
       </div>
 
       <p class="notes">
-        Notes:
-        <br>
-        COVID Site: y5t8u
+				Vaccination Site: y5t8u
       </p>
 
   </body>
