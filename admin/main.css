@@ -3,8 +3,8 @@ html {
 }
 
 body {
-	background: #005EB8;
   color: #FFF;
+	background: #005EB8;
 	font-family: 'Khula', sans-serif;
   font-size: 0;
   margin: 2vw 2vw;
@@ -22,6 +22,14 @@ p.notes {
   margin-top: 0.5vw;
 }
 
+p.copyright {
+  font-size: 0.85vw;
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  margin-bottom: 1vw;
+}
+
 p.time {
   font-size: 7vw;
   margin-bottom: 3.5vw;
@@ -32,15 +40,15 @@ p.time {
 }
 
 #currentTime, input {
-	font-family: 'Khula', sans-serif;
-  font-size: 7vw;
-  background: #1c64bd;
   color: white;
+  background: #1c64bd;
+  font-family: 'Khula', sans-serif;
+  font-size: 7vw;
   text-align: center;
   width: 30vw;
-  outline: none;
   border: none;
   border-radius: 30px;
+  outline: none;
 }
 
 #currentTime {
@@ -48,25 +56,25 @@ p.time {
 }
 
 div.menu {
+  background: #1c64bd;
+  height: 6vw;
   margin-left: 5vw;
   margin-right: 5vw;
-	background: #1c64bd;
 	border-radius: 20px;
 	margin-top: 75px;
-  height: 6vw;
 }
 
 button {
 	font-size: 2.75vw;
 	text-align: center;
+  width: 25vw;
+  height: 4vw;
 	border-radius: 25px;
 	border-color: white;
 	border-width: 2px;
   margin-top: 1vw;
   margin-left: 5.5%;
 	transition-duration: 0.3s;
-  width: 25vw;
-  height: 4vw;
   outline: transparent;
   cursor: pointer;
 }
@@ -129,6 +137,12 @@ button:focus {
     margin-left: inherit;
   }
 
+  p.copyright {
+    font-size: 1.85vw;
+    right: 2%;
+    margin-bottom: 2vw;
+  }
+
   div.menu {
     margin-bottom: 2vw;
     height: 197.5px;
@@ -136,7 +150,7 @@ button:focus {
 
   input {
     font-size: 50px;
-    width: 250px;
+    width: 254px;
   }
 
   #currentTime {
@@ -152,4 +166,5 @@ button:focus {
     margin-top: 3vw;
     margin-left: 10vw;
   }
+
 }

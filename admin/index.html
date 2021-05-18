@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 		<head>
-			<title> Etihad Admin </title>
 			<meta charset="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<meta name="description" content="Etihad Administrator tools" />
+			<meta name="description" content="Etihad Administrator Tools" />
 			<meta name="author" content="Azmath Choudhury" />
-      <meta http-equiv="refresh" content="10">
+      <meta http-equiv="refresh" content="6.5">
 			<link rel="stylesheet" type="text/css" href="./main.css" />
       <link rel="icon" href="../images/syringe.ico" />
 		</head>
@@ -16,38 +15,43 @@
 
       <p class="time" id="topTime"> Current Time: <span id="currentTime"></span> </p>
 				<script>
-				var today = new Date();
-				document.getElementById("currentTime").innerHTML = today.toLocaleTimeString();
+					var current = new Date();
+					document.getElementById("currentTime").innerHTML = current.toLocaleTimeString();
 				</script>
 
       <p class="time"> Waiting Time: <input readonly type="text" id="waitTime"> </p>
         <script>
-        var today = new Date();
-        var time = today.getHours() + ":" + (today.getMinutes()+15);
-        document.getElementById("waitTime").value = time;
+	        var today = new Date();
+	        var time = today.getHours() + ":" + (today.getMinutes()+15);
+	        document.getElementById("waitTime").value = time;
+					document.title = 'ᴀᴅᴍɪɴ ┇ ' + current.toLocaleTimeString() + ' ┇ ' + time;
         </script>
 
-      </div>
+    </div>
 
-      <div class="menu">
+    <div class="menu">
 
-        <a style="float:left;" target="_blank" href="https://outcomes4health.org/o4h/">
-          <button class="oforh">outcomes4health</button>
-        </a>
+      <a style="float:left;" target="_blank" href="https://outcomes4health.org/o4h/">
+        <button class="oforh">outcomes4health</button>
+      </a>
 
-        <a target="_blank" href="#">
-          <button class="nhs"><em><b>NHS</b></em> Booking</button>
-        </a>
+      <a target="_blank" href="#">
+        <button class="nhs"><em><b>NHS</b></em> Booking</button>
+      </a>
 
-        <a target="_blank" href="https://simplybook.me/en/">
-          <button class="simply"><b>SimplyBook</b></button>
-        </a>
+      <a target="_blank" href="https://simplybook.me/en/">
+        <button class="simply"><b>SimplyBook</b></button>
+      </a>
 
-      </div>
+    </div>
 
-      <p class="notes">
-				Vaccination Site: y5t8u
-      </p>
+    <p class="notes">
+			Vaccination Site: y5t8u
+    </p>
+
+		<p class="copyright">
+			&#169; Azmath Choudhury
+		</p>
 
   </body>
 </html>
