@@ -31,5 +31,9 @@ function admintimes() {
 
   document.getElementById("waitTime").innerHTML = wait;
 
+// Show times on tab title, no need to switch tabs to view
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
+
+// Dynamically refresh times, without reloading entire page
+  var t = setTimeout(admintimes);
 }
