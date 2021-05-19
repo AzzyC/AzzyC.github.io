@@ -36,23 +36,20 @@ p.time {
 }
 
 #topTime {
-  margin-top: 6vw;
+  margin-top: 8.5%;
 }
 
-#currentTime, input {
+span#currentTime, span#waitTime {
   color: white;
   background: #1c64bd;
   font-family: 'Khula', sans-serif;
   font-size: 7vw;
   text-align: center;
+  display: inline-block;
   width: 30vw;
   border: none;
   border-radius: 30px;
   outline: none;
-}
-
-#currentTime {
-  padding: 3px 18.95px 3px 25.3px;
 }
 
 div.menu {
@@ -128,7 +125,7 @@ button:focus {
   }
 
   #topTime {
-    margin-top: 12vw;
+    margin-top: 15vw;
   }
 
   p.notes {
@@ -148,16 +145,11 @@ button:focus {
     height: 197.5px;
   }
 
-  input {
+  span#currentTime, span#waitTime {
     font-size: 50px;
     width: 254px;
   }
 
-  #currentTime {
-    font-size: 50px;
-    padding-left: 28.15px;
-    padding-right: 29.25px;
-  }
 
   button {
     font-size: 25px;

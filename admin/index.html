@@ -5,27 +5,18 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta name="description" content="Etihad Administrator Tools" />
 			<meta name="author" content="Azmath Choudhury" />
-      <meta http-equiv="refresh" content="6.5">
+      <meta http-equiv="refresh" content="5.75">
 			<link rel="stylesheet" type="text/css" href="./main.css" />
       <link rel="icon" href="../images/syringe.ico" />
+			<script src="./script.js" charset="utf-8"></script>
 		</head>
-	<body>
+	<body onload="admintimes()">
 
     <div class="pod">
 
-      <p class="time" id="topTime"> Current Time: <span id="currentTime"></span> </p>
-				<script>
-					var current = new Date();
-					document.getElementById("currentTime").innerHTML = current.toLocaleTimeString();
-				</script>
+      <p class="time" id="topTime"> Current Time: <span id="currentTime"><span> </p>
 
-      <p class="time"> Waiting Time: <input readonly type="text" id="waitTime"> </p>
-        <script>
-	        var today = new Date();
-	        var time = today.getHours() + ":" + (today.getMinutes()+15);
-	        document.getElementById("waitTime").value = time;
-					document.title = 'ᴀᴅᴍɪɴ ┇ ' + current.toLocaleTimeString() + ' ┇ ' + time;
-        </script>
+      <p class="time"> Waiting Time: <span id="waitTime"></span> </p>
 
     </div>
 
