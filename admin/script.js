@@ -14,6 +14,49 @@ function admintimes() {
 
   document.getElementById("currentTime").innerHTML = current;
 
+// To save further calculations had to subtract 1 from both endHour/Minute, from actual times
+// Explanation: Each unit of time will show an exclusive time difference; cannot adjust on subsequent time unit
+// e.g.  19:55 to 20:05 ≠ 1h 10m   OR   19:54:20 to 19:55:10 ≠ 1m 50s
+
+  var cathourmin = "" + today.getHours() + minutes;
+
+  if ( cathourmin < 745 || cathourmin > 2015)
+    var remain = "No Shift: Go Home!";
+
+  if ( cathourmin >= 745 && cathourmin < 1430) {
+    shiftType = 'Morning';
+    endHour = 13;
+    endMinute = 29;
+
+    if (hours > endHour)
+      endHour++;
+    else if (cathourmin > 1300 && cathourmin < 1330)
+      endHour++;
+
+    if (minutes > endMinute)
+      endMinute = endMinute + 60;
+
+    var remain = shiftType + " Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+  }
+  else if ( cathourmin >= 1430 && cathourmin < 2015 ) {
+    shiftType = 'Afternoon';
+    endHour = 19;
+    endMinute = 14;
+
+    if (hours > endHour)
+      endHour++;
+    else if (cathourmin > 2000 && cathourmin < 2015)
+      endHour++;
+
+    if (minutes > endMinute)
+      endMinute = endMinute + 60;
+
+    var remain = shiftType + " Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+  }
+
+// Show time remaining until shift end
+  document.getElementById("remainTime").innerHTML = remain;
+
 // Incorrect time display if add 15 minutes to a time that is past 45th minute
 // Therefore, reverse the calculation by subtracting 45 minutes
   if (minutes >= 45) {

@@ -18,7 +18,7 @@ p {
 p.notes {
   font-size: 1.75vw;
   text-align: left;
-  margin-left: 9vw;
+  margin-left: 24.5vw;
   margin-top: 0.5vw;
 }
 
@@ -33,6 +33,12 @@ p.copyright {
 p.time {
   font-size: 7vw;
   margin-bottom: 3.5vw;
+}
+
+p#remainTime {
+  font-size: 1vw;
+  color: #3d6fbf;
+  text-align: right;
 }
 
 #topTime {
@@ -53,11 +59,12 @@ span#currentTime, span#waitTime {
 
 div.menu {
   background: #1c64bd;
+  text-align: center;
   height: 6vw;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
 	border-radius: 20px;
-	margin-top: 75px;
+	margin-top: 2.5vw;
 }
 
 button {
@@ -69,7 +76,7 @@ button {
 	border-color: white;
 	border-width: 2px;
   margin-top: 1vw;
-  margin-left: 5.5%;
+  margin-right: 5vw;
 	transition-duration: 0.3s;
   outline: transparent;
   cursor: pointer;
@@ -82,13 +89,8 @@ button.oforh {
 
 button.nhs {
   color: #d9d9d9;
+  margin-right: auto;
   background: #005EB8;
-}
-
-button.simply {
-  color: #06ADEF;
-  background: #ebebeb;
-  border: none;
 }
 
 button:hover {
@@ -103,10 +105,6 @@ button.nhs:hover {
   color: white;
 }
 
-button.simply:hover {
-  color: #00ccff;
-}
-
 button:focus {
 	outline-style: groove;
 	outline-width: 1px;
@@ -115,7 +113,7 @@ button:focus {
 }
 
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+/* If the screen size is 600px wide or less */
 @media screen and (max-width: 600px) {
 
   p.time {
@@ -123,8 +121,14 @@ button:focus {
     margin-bottom: 1vw;
   }
 
+  p#remainTime {
+    font-size: 2vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+
   #topTime {
-    margin-top: 15vw;
+    margin-top: 20vh;
   }
 
   p.notes {
@@ -140,8 +144,10 @@ button:focus {
   }
 
   div.menu {
+    margin-left: 10vw;
+    margin-right: 10vw;
     margin-bottom: 2vw;
-    height: 197.5px;
+    height: 140px;
   }
 
   span#currentTime, span#waitTime {
@@ -149,13 +155,13 @@ button:focus {
     width: 254px;
   }
 
-
   button {
     font-size: 25px;
-    width: 65vw;
+    margin-left: inherit;
+    margin-right: inherit;
+    width: 62.5vw;
     height: 50px;
-    margin-top: 3vw;
-    margin-left: 10vw;
+    margin-top: 4vw;
   }
 
 }
