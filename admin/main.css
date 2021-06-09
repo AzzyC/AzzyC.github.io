@@ -42,7 +42,7 @@ p#remainTime {
 }
 
 #topTime {
-  margin-top: 8.5%;
+  margin-top: 3vw;
 }
 
 span#currentTime, span#waitTime {
@@ -82,6 +82,42 @@ button {
   cursor: pointer;
 }
 
+div.date {
+  text-align: center;
+}
+
+/* Chrome has a strange colour for placeholder text */
+input::placeholder {
+  color: #b8b8b8;
+  font-size: 2.75vw;
+  font-weight: lighter;
+}
+
+input#dateInput {
+  background: #1c64bd;
+  font-size: 3.25vw;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  height: 3.75vw;
+  width: 40vw;
+  border-radius: 25px;
+  border-width: 0.5px;
+  border-color: white;
+  margin-right: 0.5vw;
+  outline: transparent;
+}
+
+button.date {
+  font-size: 2.5vw;
+  background: #1c64bd;
+  color: white;
+  width: 4vw;
+  height: 4vw;
+  margin-right: initial;
+  margin-top: initial;
+}
+
 button.oforh {
   color: #F9A825;
   background: #1976D2;
@@ -105,14 +141,6 @@ button.nhs:hover {
   color: white;
 }
 
-button:focus {
-	outline-style: groove;
-	outline-width: 1px;
-	outline-offset: 2px;
-	outline-color: #404244;
-}
-
-
 /* If the screen size is 600px wide or less */
 @media screen and (max-width: 600px) {
 
@@ -128,7 +156,23 @@ button:focus {
   }
 
   #topTime {
-    margin-top: 20vh;
+    margin-top: 10vh;
+  }
+
+  div.date {
+    margin-top: 10vw;
+  }
+
+  input#dateInput {
+    font-size: 4vw;
+    height: 7vw;
+    width: 40vw;
+    margin-right: 1.5vw;
+  }
+
+  button.date {
+    height: 7.25vw;
+    width: 8vw;
   }
 
   p.notes {

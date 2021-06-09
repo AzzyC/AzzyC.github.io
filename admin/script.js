@@ -80,3 +80,18 @@ function admintimes() {
 // Dynamically refresh times, without reloading entire page
   var t = setTimeout(admintimes);
 }
+
+function copyToClipboard(text) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+
+function dateCopy() {
+  copyText = document.getElementById("dateInput").value;
+  newDate = copyText.slice(0, 2) + '-' + copyText.slice(3, 6) + '-' + copyText.slice(-4);
+  copyToClipboard(newDate);
+}
