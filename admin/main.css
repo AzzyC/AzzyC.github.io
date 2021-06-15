@@ -7,7 +7,6 @@ body {
 	background: #005EB8;
   font-family: Helvetica, sans-serif;
   font-size: 0;
-  margin: 2vw 2vw;
 }
 
 p {
@@ -39,10 +38,6 @@ p#remainTime {
   font-size: 1vw;
   color: #3d6fbf;
   text-align: right;
-}
-
-#topTime {
-  margin-top: 3vw;
 }
 
 span#currentTime, span#waitTime {
@@ -100,7 +95,7 @@ input#dateInput {
   color: white;
   text-align: center;
   height: 3.75vw;
-  width: 40vw;
+  width: 50vw;
   border-radius: 25px;
   border-width: 0.5px;
   border-color: white;
@@ -116,6 +111,19 @@ button.date {
   height: 4vw;
   margin-right: initial;
   margin-top: initial;
+}
+
+button.date:hover {
+  color: #ff1f0a;
+}
+
+button.date:active {
+  color: #00fc58;
+  -webkit-transition: color ease;
+  -moz-transition:    color ease;
+  -ms-transition:     color ease;
+  -o-transition:      color ease;
+  transition:         color ease;
 }
 
 button.oforh {

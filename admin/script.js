@@ -25,31 +25,27 @@ function admintimes() {
 
   if ( cathourmin >= 745 && cathourmin < 1430) {
     shiftType = 'Morning';
-    endHour = 13;
+    endHour = 14;
     endMinute = 29;
-
-    if (hours > endHour)
-      endHour++;
-    else if (cathourmin > 1300 && cathourmin < 1330)
-      endHour++;
 
     if (minutes > endMinute)
       endMinute = endMinute + 60;
+
+    if (minutes > 30)
+      endHour--;
 
     var remain = shiftType + " Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
   else if ( cathourmin >= 1430 && cathourmin < 2015 ) {
     shiftType = 'Afternoon';
-    endHour = 19;
+    endHour = 20;
     endMinute = 14;
-
-    if (hours > endHour)
-      endHour++;
-    else if (cathourmin > 2000 && cathourmin < 2015)
-      endHour++;
 
     if (minutes > endMinute)
       endMinute = endMinute + 60;
+
+    if (minutes > 15)
+      endHour--;
 
     var remain = shiftType + " Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
