@@ -9,7 +9,7 @@
       <link rel="icon" href="../images/syringe.ico" />
 			<script src="./script.js" charset="utf-8"></script>
 		</head>
-	<body onload="admintimes()">
+	<body onload="admintimes(), doseGap()">
 
     <div class="pod">
 
@@ -24,6 +24,16 @@
 			<input type="text" id="dateInput" placeholder="Convert Date" onclick="this.select()">
 
 			<button class="date" onclick="dateCopy()">&#10095;&#10095;</button>
+
+		</div>
+
+		<div class="doseGap">
+
+			<p class="doseGap">
+				1<sup>st</sup> dose before: <span id="normgap"></span> <span class="gapNotice"> (8 weeks)</span>
+				<br>
+				If 1<sup>st</sup> dose before: <span id="shortgap"></span> <span class="gapNotice"> (4 weeks)</span> ; ask for medical / travel reason then call Pharmacist
+			</p>
 
 		</div>
 
@@ -47,6 +57,10 @@
 
 		<p class="copyright">
 			&#169; Azmath Choudhury
+			<br>
+			<a target="_blank" href="mailto:azmath2000@gmail.com?subject=Etihad%20Admin%20Wesbite&body=&#8226;%20Add%20this%0D%0A&#8226;%20this%0D%0A&#8226;%20and%20this%20please...">Contact</a>
+			<br>
+			<a target="_blank" href="https://github.com/AzzyC/AzzyC.github.io">Source Code</a>
 		</p>
 
   </body>

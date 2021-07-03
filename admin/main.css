@@ -22,28 +22,57 @@ p.notes {
 }
 
 p.copyright {
+  color: #d1d1d1;
   font-size: 0.85vw;
+  font-weight: bold;
   position: absolute;
+  text-align: right;
   bottom: 0;
   right: 1%;
-  margin-bottom: 1vw;
+  margin-bottom: 0.75vw;
+}
+
+a {
+  color: #e3e3e3;
+}
+
+a:hover {
+  color: white;
+  font-weight: bolder;
 }
 
 p.time {
-  font-size: 7vw;
+  font-size: 6vw;
   margin-bottom: 3.5vw;
+}
+
+p.doseGap {
+  font-size: 1vw;
+  font-weight: bold;
+  color: #b8beff;
+  margin-top: 1vw;
+}
+
+span.gapNotice {
+  font-weight: lighter;
+}
+
+span#normgap, span#shortgap {
+  font-size: 1.25vw;
+  font-weight: bolder;
 }
 
 p#remainTime {
   font-size: 1vw;
-  color: #3d6fbf;
+  color: #747eb8;
+  font-style: italic;
   text-align: right;
 }
 
 span#currentTime, span#waitTime {
   color: white;
   background: #1c64bd;
-  font-size: 7vw;
+  font-size: 6vw;
   text-align: center;
   display: inline-block;
   width: 30vw;
@@ -95,7 +124,7 @@ input#dateInput {
   color: white;
   text-align: center;
   height: 3.75vw;
-  width: 50vw;
+  width: 60vw;
   border-radius: 25px;
   border-width: 0.5px;
   border-color: white;

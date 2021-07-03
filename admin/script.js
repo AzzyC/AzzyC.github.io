@@ -74,7 +74,7 @@ function admintimes() {
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
 
 // Dynamically refresh times, without reloading entire page
-  var t = setTimeout(admintimes);
+  var t = setTimeout(admintimes, 0);
 }
 
 function copyToClipboard(text) {
@@ -90,4 +90,18 @@ function dateCopy() {
   copyText = document.getElementById("dateInput").value;
   newDate = copyText.slice(0, 2) + '-' + copyText.slice(3, 6) + '-' + copyText.slice(-4);
   copyToClipboard(newDate);
+}
+
+function doseGap() {
+// Work the date 8 weeks ago, as that is the protocol for the gap between both doses
+  var today = new Date();
+  today.setDate(today.getDate() - 56);
+  var normgap = today.toDateString();
+  document.getElementById("normgap").innerHTML = normgap;
+
+// Show date 4 weeks ago
+  var today = new Date();
+  today.setDate(today.getDate() - 28);
+  var shortgap = today.toDateString();
+  document.getElementById("shortgap").innerHTML = shortgap;
 }
