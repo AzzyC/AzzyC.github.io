@@ -6,12 +6,10 @@ body {
   color: #FFF;
 	background: #005EB8;
   font-family: Helvetica, sans-serif;
-  font-size: 0;
 }
 
 p {
   text-align: center;
-  margin-top: 2vw;
 }
 
 p.notes {
@@ -21,36 +19,57 @@ p.notes {
   margin-top: 0.5vw;
 }
 
+p#topTime {
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
+
+p#wait {
+  margin-top: 3.5vw;
+  margin-bottom: 3vw;
+}
+
 p.copyright {
   color: #d1d1d1;
   font-size: 0.85vw;
   font-weight: bold;
-  position: absolute;
+  position: fixed;
   text-align: right;
   bottom: 0;
   right: 1%;
   margin-bottom: 0.75vw;
 }
 
-a {
+a.copyright {
   color: #e3e3e3;
+  text-decoration: none;
 }
 
-a:hover {
+a.copyright:hover {
   color: white;
   font-weight: bolder;
+  font-size: 0.9vw;
+  text-decoration: underline;
 }
 
 p.time {
   font-size: 6vw;
-  margin-bottom: 3.5vw;
 }
 
-p.doseGap {
-  font-size: 1vw;
+div.doseGap {
   font-weight: bold;
-  color: #b8beff;
-  margin-top: 1vw;
+  color: #c4dcff;
+  margin-top: 1.5vw;
+}
+
+p.normGap {
+  font-size: 25px;
+  margin-bottom: 1px;
+}
+
+p.shortGap {
+  font-size: 15px;
+  margin-top: 4px;
 }
 
 span.gapNotice {
@@ -58,8 +77,19 @@ span.gapNotice {
 }
 
 span#normgap, span#shortgap {
-  font-size: 1.25vw;
+  color: white;
+  background: #004987;
   font-weight: bolder;
+  border-radius: 20px;
+  padding: 0.075vw 0.75vw;
+}
+
+span#normgap {
+  font-size: 25px;
+}
+
+span#shortgap {
+  font-size: 17.5px;
 }
 
 p#remainTime {
@@ -88,7 +118,6 @@ div.menu {
   margin-left: 15vw;
   margin-right: 15vw;
 	border-radius: 20px;
-	margin-top: 2.5vw;
 }
 
 button {
@@ -171,7 +200,7 @@ button:hover {
 }
 
 button.oforh:hover {
-		color: #ff9b0f;
+	color: #ff9b0f;
 }
 
 button.nhs:hover {
@@ -192,8 +221,34 @@ button.nhs:hover {
     margin-bottom: 5vw;
   }
 
-  #topTime {
+  p#topTime {
     margin-top: 10vh;
+  }
+
+  div.doseGap {
+    font-size: 2vw;
+  }
+
+  p.normGap {
+    font-size: 12.5px;
+    margin-bottom: 1px;
+  }
+
+  p.shortGap {
+    font-size: 6.75px;
+    margin-top: 2px;
+  }
+
+  span#normgap {
+    font-size: 15px;
+  }
+
+  span#shortgap {
+    font-size: 9.5px;
+  }
+
+  a:hover {
+    font-size: 1.8vw;
   }
 
   div.date {
@@ -203,7 +258,7 @@ button.nhs:hover {
   input#dateInput {
     font-size: 4vw;
     height: 7vw;
-    width: 40vw;
+    width: 60vw;
     margin-right: 1.5vw;
   }
 
@@ -228,7 +283,7 @@ button.nhs:hover {
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 2vw;
-    height: 140px;
+    height: 145px;
   }
 
   span#currentTime, span#waitTime {
