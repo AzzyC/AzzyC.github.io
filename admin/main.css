@@ -13,19 +13,20 @@ p {
 }
 
 p.notes {
-  font-size: 1.75vw;
+  font-size: 1.25vw;
   text-align: left;
-  margin-left: 24.5vw;
-  margin-top: 0.5vw;
+  margin-left: 27.5vw;
+  margin-top: 0.25vw;
+  margin-bottom: 0;
 }
 
 p#topTime {
-  margin-top: 2vw;
-  margin-bottom: 1vw;
+  margin-top: 1.25vw;
+  margin-bottom: 0vw;
 }
 
 p#wait {
-  margin-top: 3.5vw;
+  margin-top: 2.75vw;
   margin-bottom: 3vw;
 }
 
@@ -36,8 +37,8 @@ p.copyright {
   position: fixed;
   text-align: right;
   bottom: 0;
-  right: 1%;
-  margin-bottom: 0.75vw;
+  right: 7.5px;
+
 }
 
 a.copyright {
@@ -63,13 +64,15 @@ div.doseGap {
 }
 
 p.normGap {
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 1px;
+  margin-top: 0;
 }
 
 p.shortGap {
-  font-size: 15px;
-  margin-top: 4px;
+  font-size: 20px;
+  margin-left: 6.5vw;
+  margin-top: 5px;
 }
 
 span.gapNotice {
@@ -85,16 +88,16 @@ span#normgap, span#shortgap {
 }
 
 span#normgap {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 span#shortgap {
-  font-size: 17.5px;
+  font-size: 20px;
 }
 
 p#remainTime {
   font-size: 1vw;
-  color: #747eb8;
+  color: #72aefc;
   font-style: italic;
   text-align: right;
 }
@@ -251,6 +254,10 @@ button.nhs:hover {
     font-size: 1.8vw;
   }
 
+  a.copyright:hover {
+    font-size: 2.2vw;
+  }
+
   div.date {
     margin-top: 10vw;
   }
@@ -274,7 +281,7 @@ button.nhs:hover {
   }
 
   p.copyright {
-    font-size: 1.85vw;
+    font-size: 1.95vw;
     right: 2%;
     margin-bottom: 2vw;
   }
