@@ -97,9 +97,9 @@ function doseGap() {
   var normgap = today.toDateString();
   document.getElementById("normgap").innerHTML = normgap;
 
-// Show date 4 weeks ago
+// Show date 6 months ago
   var today = new Date();
-  today.setDate(today.getDate() - 28);
+  today.setDate(today.getDate() - 180);
   var shortgap = today.toDateString();
   document.getElementById("shortgap").innerHTML = shortgap;
 }

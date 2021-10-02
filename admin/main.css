@@ -38,7 +38,11 @@ p.copyright {
   text-align: right;
   bottom: 0;
   right: 7.5px;
+}
 
+span#copyrightName {
+  font-size: 0.825vw;
+  font-weight: 800;
 }
 
 a.copyright {
@@ -71,7 +75,6 @@ p.normGap {
 
 p.shortGap {
   font-size: 20px;
-  margin-left: 6.5vw;
   margin-top: 5px;
 }
 
