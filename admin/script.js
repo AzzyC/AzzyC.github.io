@@ -33,7 +33,7 @@ function admintimes() {
     if (minutes > 29)
       endHour--;
 
-    var remain = "Morning Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "Morning Shift (2:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
   else if ( cathourmin >= 1430 && cathourmin < 2015 ) {
     endHour = 20;
@@ -45,7 +45,7 @@ function admintimes() {
     if (minutes > 29)
       endHour--;
 
-    var remain = "Afternoon Shift: " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "Afternoon Shift (8:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
 
 // Show time remaining until shift end
@@ -99,7 +99,7 @@ function doseGap() {
 
 // Show date 6 months ago
   var today = new Date();
-  today.setDate(today.getDate() - 180);
+  today.setDate(today.getDate() - 182);
   var shortgap = today.toDateString();
   document.getElementById("shortgap").innerHTML = shortgap;
 }

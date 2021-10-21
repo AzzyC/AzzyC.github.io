@@ -74,8 +74,9 @@ p.normGap {
 }
 
 p.shortGap {
-  font-size: 20px;
-  margin-top: 5px;
+  font-size: 25px;
+  margin-left: 7.5vw;
+  margin-top: 4.75px;
 }
 
 span.gapNotice {
@@ -95,7 +96,7 @@ span#normgap {
 }
 
 span#shortgap {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 p#remainTime {
@@ -287,6 +288,10 @@ button.nhs:hover {
     font-size: 1.95vw;
     right: 2%;
     margin-bottom: 2vw;
+  }
+
+  span#copyrightName {
+    font-size: 2vw;
   }
 
   div.menu {
