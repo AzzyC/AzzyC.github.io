@@ -75,19 +75,18 @@ function admintimes() {
   var t = setTimeout(admintimes, 0);
 }
 
-function copyToClipboard(text) {
-    var dummy = document.createElement("textarea");
-    document.body.appendChild(dummy);
-    dummy.value = text;
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
-}
-
 function dateCopy() {
-  copyText = document.getElementById("dateInput").value;
-  newDate = copyText.slice(0, 2) + '-' + copyText.slice(3, 6) + '-' + copyText.slice(-4);
-  copyToClipboard(newDate);
+  var doseDate = new Date(document.getElementById("dateInput").value);
+  secondDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 56));
+
+  var doseDate = new Date(document.getElementById("dateInput").value);
+  boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 182));
+
+  alert('Below are dates for when patient is eligible for subsequent dose:' +
+  '\n\n' +
+  'If inputted 1st Dose: ' + secondDose + ' (2nd Dose)' +
+  '\n\n' +
+  'If inputted 2nd Dose: ' + boosterDose + ' (Booster Dose)');
 }
 
 function doseGap() {
