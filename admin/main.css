@@ -64,7 +64,15 @@ p.time {
 div.doseGap {
   font-weight: bold;
   color: #c4dcff;
-  margin-top: 1.5vw;
+  margin-top: 1.6vw;
+}
+
+span.dateTip {
+  font-size: 0.975vw;
+  color: #a9cce3;
+  position: absolute;
+  margin-top: -0.275vw;
+  left: 42.75vw;
 }
 
 p.normGap {
@@ -74,8 +82,8 @@ p.normGap {
 }
 
 p.shortGap {
-  font-size: 25px;
-  margin-left: 7.5vw;
+  font-size: 30px;
+  margin-left: 8.9vw;
   margin-top: 4.75px;
 }
 
@@ -84,6 +92,7 @@ span.gapNotice {
 }
 
 span#normgap, span#shortgap {
+  font-size: 30px;
   color: white;
   background: #004987;
   font-weight: bolder;
@@ -91,12 +100,8 @@ span#normgap, span#shortgap {
   padding: 0.075vw 0.75vw;
 }
 
-span#normgap {
-  font-size: 30px;
-}
-
 span#shortgap {
-  font-size: 25px;
+  padding: 0.075vw 0.96vw;
 }
 
 p#remainTime {
@@ -224,7 +229,7 @@ button.nhs:hover {
 
   p#remainTime {
     font-size: 2vw;
-    margin-top: 5vw;
+    margin-top: 3.5vw;
     margin-bottom: 5vw;
   }
 
@@ -232,17 +237,29 @@ button.nhs:hover {
     margin-top: 10vh;
   }
 
+  span.dateTip {
+    font-size: 2.5vw;
+  }
+
   div.doseGap {
     font-size: 2vw;
+    margin-top: 4vw;
+    left: 10vw;
+  }
+
+  /* Chrome has a strange colour for placeholder text */
+  input::placeholder {
+    font-size: 5vw;
   }
 
   p.normGap {
     font-size: 12.5px;
-    margin-bottom: 1px;
+    margin-top: 5vw;
+    margin-bottom: 2.5px;
   }
 
   p.shortGap {
-    font-size: 6.75px;
+    font-size: 7.75px;
     margin-top: 2px;
   }
 
@@ -251,7 +268,7 @@ button.nhs:hover {
   }
 
   span#shortgap {
-    font-size: 9.5px;
+    font-size: 13px;
   }
 
   a:hover {

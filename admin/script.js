@@ -33,7 +33,7 @@ function admintimes() {
     if (minutes > 29)
       endHour--;
 
-    var remain = "Morning Shift (2:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "AM Shift (2:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
   else if ( cathourmin >= 1430 && cathourmin < 2015 ) {
     endHour = 20;
@@ -45,7 +45,7 @@ function admintimes() {
     if (minutes > 29)
       endHour--;
 
-    var remain = "Afternoon Shift (8:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "PM Shift (8:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
 
 // Show time remaining until shift end
@@ -82,11 +82,15 @@ function dateCopy() {
   var doseDate = new Date(document.getElementById("dateInput").value);
   boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 182));
 
-  alert('Below are dates for when patient is eligible for subsequent dose:' +
+  alert('𝗕𝗲𝗹𝗼𝘄 𝗮𝗿𝗲 𝗱𝗮𝘁𝗲𝘀 𝗳𝗼𝗿 𝘄𝗵𝗲𝗻 𝗽𝗮𝘁𝗶𝗲𝗻𝘁 𝗶𝘀 𝗲𝗹𝗶𝗴𝗶𝗯𝗹𝗲 𝗳𝗼𝗿 𝘀𝘂𝗯𝘀𝗲𝗾𝘂𝗲𝗻𝘁 𝗱𝗼𝘀𝗲:' +
   '\n\n' +
-  'If inputted 1st Dose: ' + secondDose + ' (2nd Dose)' +
+  '╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍' +
   '\n\n' +
-  'If inputted 2nd Dose: ' + boosterDose + ' (Booster Dose)');
+  'If inputted 𝟭𝘀𝘁 Dose:  ' + secondDose + ' (𝟮𝗻𝗱 𝗗𝗼𝘀𝗲)' +
+  '\n\n' +
+  'If inputted 𝟮𝗻𝗱 Dose:  ' + boosterDose + ' (𝗕𝗼𝗼𝘀𝘁𝗲𝗿 𝗗𝗼𝘀𝗲)' +
+  '\n\n' +
+  '\t\t\t (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
 }
 
 function doseGap() {

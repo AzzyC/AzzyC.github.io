@@ -21,10 +21,11 @@
 
 		<div class="date">
 
-			<form action="#" autocomplete="off">
-				<input autofocus type="text" id="dateInput" placeholder="Input Dose Date e.g. 1 Aug 21  or  8 1 21" onclick="this.select()">
+			<form onsubmit="return false" autocomplete="off">
+				<input autofocus type="text" id="dateInput" placeholder="Input Dose Date" onclick="this.select()">
 				<button class="date" onclick="dateCopy()">&#10095;&#10095;</button>
 			</form>
+			<span class="dateTip">e.g. 1 Aug 21 &nbsp; or &nbsp; 8 1 21</span>
 
 		</div>
 
