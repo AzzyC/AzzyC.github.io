@@ -20,7 +20,7 @@ function admintimes() {
 
   var cathourmin = "" + today.getHours() + minutes;
 
-  if ( cathourmin < 745 || cathourmin > 2015)
+  if ( cathourmin < 745 || cathourmin >= 2030)
     var remain = "No Shift: Go Home!";
 
   if ( cathourmin >= 745 && cathourmin < 1430) {
@@ -35,7 +35,7 @@ function admintimes() {
 
     var remain = "AM Shift (2:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
   }
-  else if ( cathourmin >= 1430 && cathourmin < 2015 ) {
+  else if ( cathourmin >= 1430 && cathourmin < 2030 ) {
     endHour = 20;
     endMinute = 29;
 
