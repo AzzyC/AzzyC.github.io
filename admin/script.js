@@ -79,16 +79,64 @@ function dateCopy() {
   var doseDate = new Date(document.getElementById("dateInput").value);
   secondDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 56));
 
+  var today = new Date();
+  var secondDate = new Date(secondDose);
+
+// Convert milliseconds into days
+  secondDiff = Math.round((secondDate - today) / (1000 * 60 * 60 * 24));
+
+// Add day if time is after 12-hour clock
+  if (today.getHours() >= 12)
+    secondDiff++;
+
+  if (secondDiff > 0)
+    daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨͟)';
+  else if (secondDiff < 0)
+    daysDirection = ' days 𝐚͟𝐠͟𝐨͟)';
+  else if (secondDiff < 0.5 || secondDiff > 0.5)
+    daysDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
+  else if (!secondDiff)
+    daysDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
+
+// Easier to read direction in text than a '-' symbol
+  secondDiffAbs = Math.abs(secondDiff)
+
   var doseDate = new Date(document.getElementById("dateInput").value);
   boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 182));
 
-  alert('𝗕𝗲𝗹𝗼𝘄 𝗮𝗿𝗲 𝗱𝗮𝘁𝗲𝘀 𝗳𝗼𝗿 𝘄𝗵𝗲𝗻 𝗽𝗮𝘁𝗶𝗲𝗻𝘁 𝗶𝘀 𝗲𝗹𝗶𝗴𝗶𝗯𝗹𝗲 𝗳𝗼𝗿 𝘀𝘂𝗯𝘀𝗲𝗾𝘂𝗲𝗻𝘁 𝗱𝗼𝘀𝗲:' +
+  var today = new Date();
+  var boosterDate = new Date(boosterDose);
+
+// Convert milliseconds into days
+  boosterDiff = Math.round((boosterDate - today) / (1000 * 60 * 60 * 24));
+
+// Add day if time is after 12-hour clock
+  if (today.getHours() >= 12)
+    boosterDiff++;
+
+  if (boosterDiff > 0)
+    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨͟)';
+  else if (boosterDiff < 0)
+    boosterDirection = ' days 𝐚͟𝐠͟𝐨͟)';
+  else if (boosterDiff < 0.5 || boosterDiff > -0.5)
+    boosterDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
+  else if (!boosterDiff)
+    boosterDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
+
+// Easier to read direction in text than a '-' symbol
+  boosterDiffAbs = Math.abs(boosterDiff);
+
+  alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
   '\n\n' +
-  '╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍' +
+  new Date(document.getElementById("dateInput").value).toDateString() +
+  '\n' +
+  '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
-  'If inputted 𝟭𝘀𝘁 Dose:  ' + secondDose + ' (𝟮𝗻𝗱 𝗗𝗼𝘀𝗲)' +
-  '\n\n' +
-  'If inputted 𝟮𝗻𝗱 Dose:  ' + boosterDose + ' (𝗕𝗼𝗼𝘀𝘁𝗲𝗿 𝗗𝗼𝘀𝗲)' +
+  '𝟐𝐧𝐝 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + daysDirection +
+  '\n' +
+  '      OR' +
+  '\n' +
+  '𝐁𝐨𝐨𝐬𝐭𝐞𝐫 𝐃𝐨𝐬𝐞:  ' + boosterDose + ' (' + boosterDiffAbs + boosterDirection +
   '\n\n' +
   '\t\t\t (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
 }
