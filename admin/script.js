@@ -70,6 +70,23 @@ function admintimes() {
 
 // Show times on tab title, no need to switch tabs to view
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
+  
+// Work the date 8 weeks ago, as that is the protocol for the gap between both doses
+  var today = new Date();
+  today.setDate(today.getDate() - 56);
+  var normgap = today.toDateString();
+  document.getElementById("normgap").innerHTML = normgap;
+
+// Show date 6 months ago
+  var today = new Date();
+  today.setDate(today.getDate() - 182);
+  var shortgap = today.toDateString();
+  document.getElementById("shortgap").innerHTML = shortgap;
+
+// Show present date in DD MMM YY format as tip for input
+  var today = new Date();
+  var dateTip = 'e.g. ' + today.getDate() + ' '  + today.toDateString().slice(4, -8) + ' ' + today.toDateString().slice(-2);
+  document.getElementById("dateTip").innerHTML = dateTip;
 
 // Dynamically refresh times, without reloading entire page
   var t = setTimeout(admintimes, 0);
@@ -132,25 +149,11 @@ function dateCopy() {
   '\n' +
   '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
-  '𝟐𝐧𝐝 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + daysDirection +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + daysDirection +
   '\n' +
   '      OR' +
   '\n' +
-  '𝐁𝐨𝐨𝐬𝐭𝐞𝐫 𝐃𝐨𝐬𝐞:  ' + boosterDose + ' (' + boosterDiffAbs + boosterDirection +
+  '𝐁𝐨𝐨𝐬𝐭𝐞𝐫:    ' + boosterDose + ' (' + boosterDiffAbs + boosterDirection +
   '\n\n' +
   '\t\t\t (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
-}
-
-function doseGap() {
-// Work the date 8 weeks ago, as that is the protocol for the gap between both doses
-  var today = new Date();
-  today.setDate(today.getDate() - 56);
-  var normgap = today.toDateString();
-  document.getElementById("normgap").innerHTML = normgap;
-
-// Show date 6 months ago
-  var today = new Date();
-  today.setDate(today.getDate() - 182);
-  var shortgap = today.toDateString();
-  document.getElementById("shortgap").innerHTML = shortgap;
 }

@@ -9,7 +9,7 @@
       <link rel="icon" href="../images/syringe.ico" />
 			<script src="./script.js" charset="utf-8"></script>
 		</head>
-	<body onload="admintimes(), doseGap()">
+	<body onload="admintimes()">
 
     <div class="pod">
 
@@ -25,7 +25,7 @@
 				<input autofocus type="text" id="dateInput" placeholder="Input Dose Date" onclick="this.select()">
 				<button class="date" onclick="dateCopy()">&#10095;&#10095;</button>
 			</form>
-			<span class="dateTip">e.g. 1 Aug 21 &nbsp; or &nbsp; 8 1 21</span>
+			<span id="dateTip"></span>
 
 		</div>
 
