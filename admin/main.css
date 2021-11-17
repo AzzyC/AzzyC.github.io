@@ -9,9 +9,9 @@ p {
 }
 
 p.notes {
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   text-align: left;
-  margin-left: 27.5vw;
+  margin-left: 14.5vw;
   margin-top: 0.25vw;
   margin-bottom: 0;
 }
@@ -119,8 +119,9 @@ div.menu {
   background: #1c64bd;
   text-align: center;
   height: 6vw;
-  margin-left: 15vw;
-  margin-right: 15vw;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
 	border-radius: 20px;
 }
 
@@ -133,9 +134,13 @@ button {
 	border-color: white;
 	border-width: 2px;
   margin-top: 1vw;
-  margin-right: 5vw;
+  margin-left: 2vw;
 	transition-duration: 0.3s;
   outline: transparent;
+  cursor: pointer;
+}
+
+a {
   cursor: pointer;
 }
 
@@ -195,8 +200,14 @@ button.oforh {
 
 button.nhs {
   color: #d9d9d9;
-  margin-right: auto;
   background: #005EB8;
+}
+
+button.manual {
+  color: #e8e8e8;
+  background: #03787C;
+  margin-right: 2vw;
+  border-color: #FEFEFE;
 }
 
 button:hover {
@@ -211,6 +222,10 @@ button.nhs:hover {
   color: white;
 }
 
+button.manual:hover {
+  color: white;
+}
+
 /* If the screen size is 600px wide or less */
 @media screen and (max-width: 600px) {
 
@@ -222,7 +237,7 @@ button.nhs:hover {
   p#remainTime {
     font-size: 2vw;
     margin-top: 3.5vw;
-    margin-bottom: 5vw;
+    margin-bottom: 3.5vw;
   }
 
   p#topTime {
@@ -286,9 +301,11 @@ button.nhs:hover {
   }
 
   p.notes {
-    font-size: 20px;
+    font-size: 17.5px;
     text-align: center;
-    margin-left: inherit;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2vw;
   }
 
   p.copyright {
@@ -302,10 +319,10 @@ button.nhs:hover {
   }
 
   div.menu {
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-bottom: 2vw;
-    height: 145px;
+    width: 80vw;
+    height: 215px;
+    padding-top: 0.75vh;
+    padding-bottom: 0.75vh;
   }
 
   span#currentTime, span#waitTime {
@@ -315,8 +332,6 @@ button.nhs:hover {
 
   button {
     font-size: 25px;
-    margin-left: inherit;
-    margin-right: inherit;
     width: 62.5vw;
     height: 50px;
     margin-top: 4vw;
