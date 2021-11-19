@@ -1,3 +1,12 @@
+function msToTime(duration) {
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+  return hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s left";
+}
+
 function admintimes() {
   var today = new Date();
 
@@ -14,42 +23,35 @@ function admintimes() {
 
   document.getElementById("currentTime").innerHTML = current;
 
-// To save further calculations had to subtract 1 from endMinute, from actual times
-// Explanation: Each unit of time will show an exclusive time difference; cannot adjust on subsequent time unit
-// e.g.  19:55 to 20:05 ≠ 1h 10m   OR   19:54:20 to 19:55:10 ≠ 1m 50s
-
+// Start of shift remaining time calculation
   var cathourmin = "" + today.getHours() + minutes;
 
   if ( cathourmin < 745 || cathourmin >= 2030)
     var remain = "No Shift: Go Home!";
 
   if ( cathourmin >= 745 && cathourmin < 1430) {
-    endHour = 14;
-    endMinute = 29;
+    var amEndTime = new Date().toDateString() + " 14:30";
+    var date = new Date(amEndTime).getTime();
+    var now = new Date().getTime();
+    diff = date - now;
+    diffConverted = msToTime(diff);
 
-    if (minutes > endMinute)
-      endMinute = endMinute + 60;
-
-    if (minutes > 29)
-      endHour--;
-
-    var remain = "AM Shift (2:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "AM Shift (2:30pm): " + diffConverted;
   }
   else if ( cathourmin >= 1430 && cathourmin < 2030 ) {
-    endHour = 20;
-    endMinute = 29;
+    var pmEndTime = new Date().toDateString() + " 20:30";
+    var date = new Date(pmEndTime).getTime();
+    var now = new Date().getTime();
+    diff = date - now;
+    diffConverted = msToTime(diff);
 
-    if (minutes > endMinute)
-      endMinute = endMinute + 60;
-
-    if (minutes > 29)
-      endHour--;
-
-    var remain = "PM Shift (8:30pm): " + (endHour - hours) + "h " + (endMinute - minutes) + "m " + (60 - seconds) + "s left";
+    var remain = "PM Shift (8:30pm): " + diffConverted;
   }
 
 // Show time remaining until shift end
   document.getElementById("remainTime").innerHTML = remain;
+
+// End of shift remaining time calculation
 
 // Incorrect time display if add 15 minutes to a time that is past 45th minute
 // Therefore, reverse the calculation by subtracting 45 minutes
@@ -70,7 +72,7 @@ function admintimes() {
 
 // Show times on tab title, no need to switch tabs to view
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
-  
+
 // Work the date 8 weeks ago, as that is the protocol for the gap between both doses
   var today = new Date();
   today.setDate(today.getDate() - 56);
