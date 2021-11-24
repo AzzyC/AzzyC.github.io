@@ -17,7 +17,7 @@ p.notes {
 }
 
 p#topTime {
-  margin-top: 1.25vw;
+  margin-top: 0.75vw;
   margin-bottom: 0vw;
 }
 
@@ -71,28 +71,49 @@ span#dateTip {
   left: 45vw;
 }
 
-p.normGap {
+p.normGap, p.kidGap, p.shortGap {
   font-size: 30px;
-  margin-bottom: 1px;
+  text-align: center;
+}
+
+p.normGap {
+  margin-bottom: 0;
   margin-top: 0;
 }
 
-p.shortGap {
-  font-size: 30px;
+p.kidGap {
+  font-size: 22.5px;
   margin-top: 4.75px;
+  margin-bottom: 0;
+  margin-right: 3.5vw;
+}
+
+p.shortGap {
+  margin-top: 4.75px;
+  margin-bottom: 12.5px;
+}
+
+span.kidNote {
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 span.gapNotice {
   font-weight: lighter;
 }
 
-span#normgap, span#shortgap {
+span#normgap, span#kidgap, span#shortgap {
   font-size: 30px;
+  display: inline-block;
   color: white;
   background: #004987;
   font-weight: bolder;
   border-radius: 20px;
   padding: 0.075vw 0.75vw;
+}
+
+span#kidgap {
+  font-size: 25px;
 }
 
 p#remainTime {
@@ -210,7 +231,7 @@ button.manual {
   border-color: #FEFEFE;
 }
 
-button:hover {
+input:hover, button:hover {
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -241,7 +262,7 @@ button.manual:hover {
   }
 
   p#topTime {
-    margin-top: 10vh;
+    margin-top: 8.75vh;
   }
 
   span#dateTip {
@@ -261,10 +282,27 @@ button.manual:hover {
     font-size: 5vw;
   }
 
+  p.normGap, p.kidGap, p.shortGap {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   p.normGap {
     font-size: 12.5px;
     margin-top: 5vw;
     margin-bottom: 2.5px;
+  }
+
+  p.kidGap {
+    font-size: 10.5px;
+    margin-top: 2px;
+    margin-bottom: 2.5px;
+    margin-right: 4vw;
+  }
+
+  span.kidNote {
+    font-size: 8.5px;
   }
 
   p.shortGap {
@@ -274,6 +312,10 @@ button.manual:hover {
 
   span#normgap, span#shortgap {
     font-size: 15px;
+  }
+
+  span#kidgap {
+    font-size: 12px;
   }
 
   a:hover {
@@ -335,6 +377,10 @@ button.manual:hover {
     width: 62.5vw;
     height: 50px;
     margin-top: 4vw;
+  }
+
+  button.manual {
+    margin-right: inherit;
   }
 
 }

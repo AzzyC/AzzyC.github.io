@@ -79,6 +79,13 @@ function admintimes() {
   var normgap = today.toDateString();
   document.getElementById("normgap").innerHTML = normgap;
 
+// Show date 12 weeks ago, as that is the protocol for the gap between both doses
+  var today = new Date();
+  today.setDate(today.getDate() - 84);
+  var normgap = today.toDateString();
+  document.getElementById("kidgap").innerHTML = normgap;
+
+
 // Show date 6 months ago
   var today = new Date();
   today.setDate(today.getDate() - 182);
@@ -95,6 +102,7 @@ function admintimes() {
 }
 
 function dateCopy() {
+// Start of second dose
   var doseDate = new Date(document.getElementById("dateInput").value);
   secondDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 56));
 
@@ -109,9 +117,9 @@ function dateCopy() {
     secondDiff++;
 
   if (secondDiff > 0)
-    daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨͟)';
+    daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
   else if (secondDiff < 0)
-    daysDirection = ' days 𝐚͟𝐠͟𝐨͟)';
+    daysDirection = ' days 𝐚͟𝐠͟𝐨)';
   else if (secondDiff < 0.5 || secondDiff > 0.5)
     daysDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
   else if (!secondDiff)
@@ -120,6 +128,33 @@ function dateCopy() {
 // Easier to read direction in text than a '-' symbol
   secondDiffAbs = Math.abs(secondDiff)
 
+// Start of second dose (12-17)
+var doseDate = new Date(document.getElementById("dateInput").value);
+secondDoseKid = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 84));
+
+var today = new Date();
+var secondDateKid = new Date(secondDoseKid);
+
+// Convert milliseconds into days
+secondDiffKid = Math.round((secondDateKid - today) / (1000 * 60 * 60 * 24));
+
+// Add day if time is after 12-hour clock
+if (today.getHours() >= 12)
+  secondDiffKid++;
+
+if (secondDiffKid > 0)
+  daysDirectionKid = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
+else if (secondDiffKid < 0)
+  daysDirectionKid = ' days 𝐚͟𝐠͟𝐨)';
+else if (secondDiffKid < 0.5 || secondDiffKid > 0.5)
+  daysDirectionKid = ' days: 𝐓𝐨𝐝𝐚𝐲)';
+else if (!secondDiffKid)
+  daysDirectionKid = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
+
+// Easier to read direction in text than a '-' symbol
+secondDiffKidAbs = Math.abs(secondDiffKid)
+
+// Start of booster dose
   var doseDate = new Date(document.getElementById("dateInput").value);
   boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 182));
 
@@ -134,9 +169,9 @@ function dateCopy() {
     boosterDiff++;
 
   if (boosterDiff > 0)
-    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨͟)';
+    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
   else if (boosterDiff < 0)
-    boosterDirection = ' days 𝐚͟𝐠͟𝐨͟)';
+    boosterDirection = ' days 𝐚͟𝐠͟𝐨)';
   else if (boosterDiff < 0.5 || boosterDiff > -0.5)
     boosterDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
   else if (!boosterDiff)
@@ -152,6 +187,10 @@ function dateCopy() {
   '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
   '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + daysDirection +
+  '\n' +
+  '      OR' +
+  '\n' +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟮-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + daysDirectionKid +
   '\n' +
   '      OR' +
   '\n' +
