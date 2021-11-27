@@ -85,12 +85,13 @@ p.kidGap {
   font-size: 22.5px;
   margin-top: 4.75px;
   margin-bottom: 0;
-  margin-right: 3.5vw;
+  margin-right: 4.6vw;
 }
 
 p.shortGap {
   margin-top: 4.75px;
   margin-bottom: 12.5px;
+  margin-left: 11.5vw;
 }
 
 span.kidNote {
@@ -121,7 +122,8 @@ p#remainTime {
   color: #72aefc;
   font-style: italic;
   text-align: right;
-  margin-top: -1.75vw;
+  margin-top: -0.75vw;
+  margin-bottom: 0.5vw;
 }
 
 span#currentTime, span#waitTime {
@@ -257,12 +259,12 @@ button.manual:hover {
 
   p#remainTime {
     font-size: 2vw;
-    margin-top: 3.5vw;
-    margin-bottom: 3.5vw;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
 
   p#topTime {
-    margin-top: 8.75vh;
+    margin-top: 75px;
   }
 
   span#dateTip {
@@ -284,21 +286,22 @@ button.manual:hover {
 
   p.normGap, p.kidGap, p.shortGap {
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   p.normGap {
     font-size: 12.5px;
     margin-top: 5vw;
     margin-bottom: 2.5px;
+    margin-left: inherit;
+    margin-right: inherit;
   }
 
   p.kidGap {
     font-size: 10.5px;
     margin-top: 2px;
     margin-bottom: 2.5px;
-    margin-right: 4vw;
+    margin-right: 30px;
+    margin-left: inherit;
   }
 
   span.kidNote {
@@ -306,8 +309,11 @@ button.manual:hover {
   }
 
   p.shortGap {
+    text-align: left;
     font-size: 12.5px;
     margin-top: 2px;
+    margin-left: 47.5px;
+    margin-right: inherit;
   }
 
   span#normgap, span#shortgap {

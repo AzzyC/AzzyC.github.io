@@ -88,7 +88,7 @@ function admintimes() {
 
 // Show date 6 months ago
   var today = new Date();
-  today.setDate(today.getDate() - 182);
+  today.setDate(today.getDate() - 175);
   var shortgap = today.toDateString();
   document.getElementById("shortgap").innerHTML = shortgap;
 
@@ -156,7 +156,7 @@ secondDiffKidAbs = Math.abs(secondDiffKid)
 
 // Start of booster dose
   var doseDate = new Date(document.getElementById("dateInput").value);
-  boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 182));
+  boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 175));
 
   var today = new Date();
   var boosterDate = new Date(boosterDose);
@@ -169,9 +169,9 @@ secondDiffKidAbs = Math.abs(secondDiffKid)
     boosterDiff++;
 
   if (boosterDiff > 0)
-    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
+    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨 - 𝗶𝗻𝗰𝗹𝘂𝗱𝗶𝗻𝗴 𝟳 𝗱𝗮𝘆 𝗴𝗿𝗮𝗰𝗲)';
   else if (boosterDiff < 0)
-    boosterDirection = ' days 𝐚͟𝐠͟𝐨)';
+    boosterDirection = ' days 𝐚͟𝐠͟𝐨 - 𝗶𝗻𝗰𝗹𝘂𝗱𝗶𝗻𝗴 𝟳 𝗱𝗮𝘆 𝗴𝗿𝗮𝗰𝗲)';
   else if (boosterDiff < 0.5 || boosterDiff > -0.5)
     boosterDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
   else if (!boosterDiff)
