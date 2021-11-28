@@ -12,6 +12,12 @@ function msToTime(endTime) {
   return hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s left";
 }
 
+function doseGap(Gap) {
+  var today = new Date();
+  today.setDate(today.getDate() - Gap);
+  return today.toDateString();
+}
+
 function admintimes() {
   var today = new Date();
 
@@ -67,23 +73,16 @@ function admintimes() {
 // Show times on tab title, no need to switch tabs to view
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
 
-// Work the date 8 weeks ago, as that is the protocol for the gap between both doses
-  var today = new Date();
-  today.setDate(today.getDate() - 56);
-  var normgap = today.toDateString();
+// Work the date 8 weeks ago, as that is the protocol for gap between both doses
+  var normgap = doseGap(56)
   document.getElementById("normgap").innerHTML = normgap;
 
-// Show date 12 weeks ago, as that is the protocol for the gap between both doses
-  var today = new Date();
-  today.setDate(today.getDate() - 84);
-  var normgap = today.toDateString();
-  document.getElementById("kidgap").innerHTML = normgap;
+// Show date 12 weeks ago, as that is the protocol for gap between both doses, for 17-17 y/o
+  var kidgap = doseGap(84);
+  document.getElementById("kidgap").innerHTML = kidgap;
 
-
-// Show date 6 months ago
-  var today = new Date();
-  today.setDate(today.getDate() - 175);
-  var shortgap = today.toDateString();
+// Show date 6 months ago, gap between second dose to booster
+  var shortgap = doseGap(175);
   document.getElementById("shortgap").innerHTML = shortgap;
 
 // Show present date in DD MMM YY format as tip for input
