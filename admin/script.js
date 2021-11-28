@@ -1,8 +1,13 @@
-function msToTime(duration) {
-  var milliseconds = Math.floor((duration % 1000) / 100),
-    seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
-    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+function msToTime(endTime) {
+  var endTimeDate = new Date().toDateString() + ' ' + endTime;
+  var date = new Date(endTimeDate).getTime();
+  var now = new Date().getTime();
+  diff = date - now;
+
+  var milliseconds = Math.floor((diff % 1000) / 100),
+    seconds = Math.floor((diff / 1000) % 60),
+    minutes = Math.floor((diff / (1000 * 60)) % 60),
+    hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
 
   return hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s left";
 }
@@ -23,35 +28,24 @@ function admintimes() {
 
   document.getElementById("currentTime").innerHTML = current;
 
-// Start of shift remaining time calculation
+// Start of shift remaining time section
   var cathourmin = "" + today.getHours() + minutes;
 
   if ( cathourmin < 745 || cathourmin >= 2030)
     var remain = "No Shift: Go Home!";
 
   if ( cathourmin >= 745 && cathourmin < 1430) {
-    var amEndTime = new Date().toDateString() + " 14:30";
-    var date = new Date(amEndTime).getTime();
-    var now = new Date().getTime();
-    diff = date - now;
-    diffConverted = msToTime(diff);
-
-    var remain = "AM Shift (2:30pm): " + diffConverted;
+    amConverted = msToTime('14:30');
+    var remain = "AM Shift (2:30pm): " + amConverted;
   }
+
   else if ( cathourmin >= 1430 && cathourmin < 2030 ) {
-    var pmEndTime = new Date().toDateString() + " 20:30";
-    var date = new Date(pmEndTime).getTime();
-    var now = new Date().getTime();
-    diff = date - now;
-    diffConverted = msToTime(diff);
-
-    var remain = "PM Shift (8:30pm): " + diffConverted;
+    pmConverted = msToTime('20:30');
+    var remain = "PM Shift (8:30pm): " + pmConverted;
   }
 
-// Show time remaining until shift end
   document.getElementById("remainTime").innerHTML = remain;
-
-// End of shift remaining time calculation
+// End of shift remaining time section
 
 // Incorrect time display if add 15 minutes to a time that is past 45th minute
 // Therefore, reverse the calculation by subtracting 45 minutes
