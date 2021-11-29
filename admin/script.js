@@ -18,6 +18,30 @@ function doseGap(Gap) {
   return today.toDateString();
 }
 
+function addGap(Gap) {
+  var doseDate = new Date(document.getElementById("dateInput").value);
+  return doseDate.toDateString(doseDate.setDate(doseDate.getDate() + Gap));
+}
+
+function msToDays(Dose) {
+  var today = new Date();
+  var doseDate = new Date(Dose);
+  return Math.round((doseDate - today) / (1000 * 60 * 60 * 24));
+}
+
+function dayDirection(Diff) {
+  if (Diff > 0)
+    daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
+  else if (Diff < 0)
+    daysDirection = ' days 𝐚͟𝐠͟𝐨)';
+  else if (Diff < 0.5 || secondDiff > 0.5)
+    daysDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
+  else if (!Diff)
+    daysDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
+
+  return daysDirection;
+}
+
 function admintimes() {
   var today = new Date();
 
@@ -86,7 +110,6 @@ function admintimes() {
   document.getElementById("shortgap").innerHTML = shortgap;
 
 // Show present date in DD MMM YY format as tip for input
-  var today = new Date();
   var dateTip = 'e.g. ' + today.getDate() + ' '  + today.toDateString().slice(4, -8) + ' ' + today.toDateString().slice(-2);
   document.getElementById("dateTip").innerHTML = dateTip;
 
@@ -95,82 +118,39 @@ function admintimes() {
 }
 
 function dateCopy() {
-// Start of second dose
-  var doseDate = new Date(document.getElementById("dateInput").value);
-  secondDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 56));
-
   var today = new Date();
-  var secondDate = new Date(secondDose);
 
-// Convert milliseconds into days
-  secondDiff = Math.round((secondDate - today) / (1000 * 60 * 60 * 24));
+// Start of second dose
+  secondDose = addGap(56);
+  secondDiff = msToDays(secondDose);
 
-// Add day if time is after 12-hour clock
+// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
   if (today.getHours() >= 12)
     secondDiff++;
 
-  if (secondDiff > 0)
-    daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
-  else if (secondDiff < 0)
-    daysDirection = ' days 𝐚͟𝐠͟𝐨)';
-  else if (secondDiff < 0.5 || secondDiff > 0.5)
-    daysDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
-  else if (!secondDiff)
-    daysDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
-
-// Easier to read direction in text than a '-' symbol
+  secondDoseDayDirection = dayDirection(secondDiff);
   secondDiffAbs = Math.abs(secondDiff)
 
 // Start of second dose (12-17)
-var doseDate = new Date(document.getElementById("dateInput").value);
-secondDoseKid = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 84));
+  secondDoseKid = addGap(84);
+  secondDiffKid = msToDays(secondDoseKid);
 
-var today = new Date();
-var secondDateKid = new Date(secondDoseKid);
+// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
+  if (today.getHours() >= 12)
+    secondDiffKid++;
 
-// Convert milliseconds into days
-secondDiffKid = Math.round((secondDateKid - today) / (1000 * 60 * 60 * 24));
-
-// Add day if time is after 12-hour clock
-if (today.getHours() >= 12)
-  secondDiffKid++;
-
-if (secondDiffKid > 0)
-  daysDirectionKid = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
-else if (secondDiffKid < 0)
-  daysDirectionKid = ' days 𝐚͟𝐠͟𝐨)';
-else if (secondDiffKid < 0.5 || secondDiffKid > 0.5)
-  daysDirectionKid = ' days: 𝐓𝐨𝐝𝐚𝐲)';
-else if (!secondDiffKid)
-  daysDirectionKid = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
-
-// Easier to read direction in text than a '-' symbol
-secondDiffKidAbs = Math.abs(secondDiffKid)
+  secondDoseKidDayDirection = dayDirection(secondDiffKid);
+  secondDiffKidAbs = Math.abs(secondDiffKid)
 
 // Start of booster dose
-  var doseDate = new Date(document.getElementById("dateInput").value);
-  boosterDose = doseDate.toDateString(doseDate.setDate(doseDate.getDate() + 175));
+  boosterDose = addGap(175);
+  boosterDiff = msToDays(boosterDose);
 
-  var today = new Date();
-  var boosterDate = new Date(boosterDose);
-
-// Convert milliseconds into days
-  boosterDiff = Math.round((boosterDate - today) / (1000 * 60 * 60 * 24));
-
-// Add day if time is after 12-hour clock
+// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
   if (today.getHours() >= 12)
     boosterDiff++;
 
-  if (boosterDiff > 0)
-    boosterDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨 - 𝗶𝗻𝗰𝗹𝘂𝗱𝗶𝗻𝗴 𝟳 𝗱𝗮𝘆 𝗴𝗿𝗮𝗰𝗲)';
-  else if (boosterDiff < 0)
-    boosterDirection = ' days 𝐚͟𝐠͟𝐨 - 𝗶𝗻𝗰𝗹𝘂𝗱𝗶𝗻𝗴 𝟳 𝗱𝗮𝘆 𝗴𝗿𝗮𝗰𝗲)';
-  else if (boosterDiff < 0.5 || boosterDiff > -0.5)
-    boosterDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
-  else if (!boosterDiff)
-    boosterDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
-
-// Easier to read direction in text than a '-' symbol
+  boosterDayDirection = dayDirection(boosterDiff);
   boosterDiffAbs = Math.abs(boosterDiff);
 
   alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
@@ -179,15 +159,15 @@ secondDiffKidAbs = Math.abs(secondDiffKid)
   '\n' +
   '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
-  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + daysDirection +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + secondDoseDayDirection +
   '\n' +
   '      OR' +
   '\n' +
-  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟮-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + daysDirectionKid +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟮-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + secondDoseKidDayDirection +
   '\n' +
   '      OR' +
   '\n' +
-  '𝐁𝐨𝐨𝐬𝐭𝐞𝐫:    ' + boosterDose + ' (' + boosterDiffAbs + boosterDirection +
+  '𝐁𝐨𝐨𝐬𝐭𝐞𝐫:    ' + boosterDose + ' (' + boosterDiffAbs + boosterDayDirection +
   '\n\n' +
   '\t\t\t (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
 }
