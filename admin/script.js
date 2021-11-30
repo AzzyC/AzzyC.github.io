@@ -30,11 +30,11 @@ function msToDays(Dose) {
 }
 
 function dayDirection(Diff) {
-  if (Diff > 0)
+  if (Diff >= 0.5)
     daysDirection = ' days 𝐭͟𝐨͟ ͟𝐠͟𝐨)';
-  else if (Diff < 0)
+  else if (Diff <= -0.5)
     daysDirection = ' days 𝐚͟𝐠͟𝐨)';
-  else if (Diff < 0.5 || secondDiff > 0.5)
+  else if (Math.abs(Diff) < 0.5)
     daysDirection = ' days: 𝐓𝐨𝐝𝐚𝐲)';
   else if (!Diff)
     daysDirection = ') 𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';

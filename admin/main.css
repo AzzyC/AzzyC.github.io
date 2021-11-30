@@ -22,8 +22,8 @@ p#topTime {
 }
 
 p#wait {
-  margin-top: 2.75vw;
-  margin-bottom: 3vw;
+  margin-top: 2.25vw;
+  margin-bottom: 2.75vw;
 }
 
 p.copyright {
@@ -73,7 +73,6 @@ span#dateTip {
 
 p.normGap, p.kidGap, p.shortGap {
   font-size: 30px;
-  text-align: center;
 }
 
 p.normGap {
@@ -89,9 +88,9 @@ p.kidGap {
 }
 
 p.shortGap {
-  margin-top: 4.75px;
+  margin-top: 4px;
   margin-bottom: 12.5px;
-  margin-left: 11.5vw;
+  margin-left: 11vw;
 }
 
 span.kidNote {
@@ -105,7 +104,6 @@ span.gapNotice {
 
 span#normgap, span#kidgap, span#shortgap {
   font-size: 30px;
-  display: inline-block;
   color: white;
   background: #004987;
   font-weight: bolder;
@@ -264,7 +262,7 @@ button.manual:hover {
   }
 
   p#topTime {
-    margin-top: 75px;
+    margin-top: 25px;
   }
 
   span#dateTip {
@@ -282,10 +280,6 @@ button.manual:hover {
   /* Chrome has a strange colour for placeholder text */
   input::placeholder {
     font-size: 5vw;
-  }
-
-  p.normGap, p.kidGap, p.shortGap {
-    text-align: center;
   }
 
   p.normGap {
@@ -312,7 +306,7 @@ button.manual:hover {
     text-align: left;
     font-size: 12.5px;
     margin-top: 2px;
-    margin-left: 47.5px;
+    margin-left: 45px;
     margin-right: inherit;
   }
 
@@ -357,13 +351,13 @@ button.manual:hover {
   }
 
   p.copyright {
-    font-size: 1.95vw;
+    font-size: 2.25vw;
     right: 2%;
     margin-bottom: 2vw;
   }
 
   span#copyrightName {
-    font-size: 2vw;
+    font-size: 2.3vw;
   }
 
   div.menu {
