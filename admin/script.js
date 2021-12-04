@@ -98,7 +98,7 @@ function admintimes() {
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
 
 // Work the date 8 weeks ago, as that is the protocol for gap between both doses
-  var normgap = doseGap(56)
+  var normgap = doseGap(56);
   document.getElementById("normgap").innerHTML = normgap;
 
 // Show date 12 weeks ago, as that is the protocol for gap between both doses, for 17-17 y/o
@@ -129,7 +129,7 @@ function dateCopy() {
     secondDiff++;
 
   secondDoseDayDirection = dayDirection(secondDiff);
-  secondDiffAbs = Math.abs(secondDiff)
+  secondDiffAbs = Math.abs(secondDiff);
 
 // Start of second dose (12-17)
   secondDoseKid = addGap(84);
@@ -140,7 +140,7 @@ function dateCopy() {
     secondDiffKid++;
 
   secondDoseKidDayDirection = dayDirection(secondDiffKid);
-  secondDiffKidAbs = Math.abs(secondDiffKid)
+  secondDiffKidAbs = Math.abs(secondDiffKid);
 
 // Start of booster dose
   boosterDose = addGap(175);
@@ -150,8 +150,13 @@ function dateCopy() {
   if (today.getHours() >= 12)
     boosterDiff++;
 
-  boosterDayDirection = dayDirection(boosterDiff);
   boosterDiffAbs = Math.abs(boosterDiff);
+
+// Add a note extension for booster to recognise how early patients are admitted
+  if (boosterDiffAbs < 0.5 || boosterDiff)
+    boosterDayDirection = dayDirection(boosterDiff) + ' - 𝘪𝘯𝘤𝘭. 7 𝘥𝘢𝘺 𝘨𝘳𝘢𝘤𝘦';
+  else
+    boosterDayDirection = dayDirection(boosterDiff);
 
   alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
   '\n\n' +
