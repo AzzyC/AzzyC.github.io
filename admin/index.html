@@ -11,7 +11,7 @@
       <link rel="icon" href="../images/syringe.ico" />
 			<script src="./script.js"></script>
 		</head>
-	<body onload="admintimes()">
+	<body onload="admintimes(), tempNotice()">
 
     <div class="pod">
 
@@ -25,7 +25,7 @@
 
 			<form onsubmit="return false" autocomplete="off">
 				<input autofocus type="text" id="dateInput" placeholder="Input Dose Date" onclick="this.select()">
-				<button class="date" onclick="dateCopy()">&#10095;&#10095;</button>
+				<button class="date" title="Save hand movement, can press 𝗘𝗻𝘁𝗲𝗿 ↲" onclick="dateCopy()">&#10095;&#10095;</button>
 			</form>
 			<span id="dateTip"></span>
 
@@ -37,7 +37,7 @@
 				1<sup>st</sup> dose: <span id="normgap"></span> <span class="gapNotice"> (8 weeks/56 days)</span>
 			</p>
 			<p class="kidGap">
-				1<sup>st</sup> dose <span class="kidNote">(12-17 y/o)</span>: <span id="kidgap">h</span> <span class="gapNotice"> (12 weeks/84 days)</span>
+				1<sup>st</sup> dose <span class="kidNote">(12-17 y/o)</span>: <span id="kidgap"></span> <span class="gapNotice"> (12 weeks/84 days)</span>
 			</p>
 			<p class="shortGap">
 				2<sup>nd</sup> dose: <span id="shortgap"></span> <span class="gapNotice"> (6 months/175 days<span class="kidNote">&nbsp; <em>incl. 7 day grace</em></span>)</span>
