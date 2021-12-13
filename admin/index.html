@@ -11,9 +11,12 @@
       <link rel="icon" href="../images/syringe.ico" />
 			<script src="./script.js"></script>
 		</head>
-	<body onload="admintimes(), tempNotice()">
+	<body onload="admintimes()">
 
     <div class="pod">
+
+			<p id="remainTime"></p>
+			<p class="updated">Last updated: 13 Dec 21 19:35:56</p>
 
       <p class="time" id="topTime"> Current Time: <span id="currentTime"><span> </p>
 
@@ -32,20 +35,47 @@
 		</div>
 
 		<div class="doseGap">
+			<div class="under18">
+				<b><u>Under 18:</u></b>
+				<br><br>
+				12-15 y/o: Appointments <b>only</b>
+				<br><br>
+				16-17 y/o: Appointments + Walk-In = <b>Pfizer</b>
+				<br>
+				12 weeks/84 days between 1<sup>st</sup> and 2<sup>nd</sup> dose
+				<br>
+				∴ 1<sup>st</sup> dose on or before: <span id="kidgap"></span>
+			</div>
 
-			<p class="normGap">
-				1<sup>st</sup> dose: <span id="normgap"></span> <span class="gapNotice"> (8 weeks/56 days)</span>
-			</p>
-			<p class="kidGap">
-				1<sup>st</sup> dose <span class="kidNote">(12-17 y/o)</span>: <span id="kidgap"></span> <span class="gapNotice"> (12 weeks/84 days)</span>
-			</p>
-			<p class="shortGap">
-				2<sup>nd</sup> dose: <span id="shortgap"></span> <span class="gapNotice"> (6 months/175 days<span class="kidNote">&nbsp; <em>incl. 7 day grace</em></span>)</span>
-			</p>
+			<div class="above18">
+				<b><u>18 and above:</u></b>
+				<br><br>
+				Appointments + Walk-In
+				<br>
+				8 weeks/56 days between 1<sup>st</sup> and 2<sup>nd</sup> dose
+				<br>
+				∴ 1<sup>st</sup> dose on or before: <span id="normgap"></span>
+				<br><br>
+				<big>Walk-In 1<sup>st</sup> dose: Moderna</big>
+			</div>
+
+			<div class="booster">
+				<b><u>Booster:</u></b>
+				<br><br>
+				30/+ <b>only*</b>: Appointments + Walk-In
+				<br>
+				2<sup>nd</sup> dose on or between: <span id="shortgap"></span> to
+				<br> <span id="threeMonth"></span> = <b>Pfizer</b>
+				<br>
+				2<sup>nd</sup> dose on or before:
+				<br>
+				<span id="beyondSix"></span> = <b>Moderna</b>
+				<br><br>
+				<span class="underCohort"> <b>*Under</b> 30: Work in Health/Social Care (Show ID) or Immunosuppressed </span>
+			</div>
+
 
 		</div>
-
-		<p id="remainTime"></p>
 
     <div class="menu">
 

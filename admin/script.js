@@ -1,17 +1,3 @@
-function tempNotice () {
-  setTimeout(() => {
-    alert('  ***𝐍𝐎𝐓𝐈𝐂𝐄***' +
-    '\n' +
-    '𝗣𝗹𝗲𝗮𝘀𝗲 𝗯𝗲 𝗮𝗱𝘃𝗶𝘀𝗲𝗱 𝘁𝗵𝗮𝘁 𝘁𝗵𝗶𝘀 𝘀𝗶𝘁𝗲 𝗵𝗮𝘀 𝗻𝗼𝘁 𝘆𝗲𝘁 𝗯𝗲𝗲𝗻 𝘂𝗽𝗱𝗮𝘁𝗲𝗱 𝘁𝗼 𝗿𝗲𝗳𝗹𝗲𝗰𝘁 𝗿𝗲𝗰𝗲𝗻𝘁 𝗚𝗠𝗩𝗖 𝗦𝗶𝘁𝗲 𝗚𝘂𝗶𝗱𝗲𝗹𝗶𝗻𝗲 𝗰𝗵𝗮𝗻𝗴𝗲𝘀 (𝐟𝐫𝐨𝐦 𝐅𝐫𝐢 𝟏𝟎𝐭𝐡 𝐃𝐞𝐜)' +
-    '\n\n' +
-    '𝗣𝗹𝗲𝗮𝘀𝗲 𝗮𝗱𝗵𝗲𝗿𝗲 𝘁𝗼 𝘁𝗵𝗲 𝗹𝗮𝗺𝗶𝗻𝗮𝘁𝗲𝗱 𝗵𝗲𝗹𝗽𝘀𝗵𝗲𝗲𝘁 𝗴𝗶𝘃𝗲𝗻 𝗮𝘁 𝗲𝗮𝗰𝗵 𝗳𝗿𝗼𝗻𝘁 𝗱𝗲𝘀𝗸, 𝗳𝗼𝗿 𝗯𝗲𝘁𝘁𝗲𝗿 𝘂𝗻𝗱𝗲𝗿𝘀𝘁𝗮𝗻𝗱𝗶𝗻𝗴 𝗼𝗳 𝗱𝗮𝘁𝗲𝘀 & 𝘃𝗮𝗰𝗰𝗶𝗻𝗲𝘀' +
-    '\n\n' +
-    '𝗔𝗽𝗼𝗹𝗼𝗴𝗶𝗲𝘀 𝗳𝗼𝗿 𝗶𝗻𝗰𝗼𝗻𝘃𝗲𝗻𝗶𝗲𝗻𝗰𝗲𝘀' +
-    '\n\n' +
-    '𝙉𝙤𝙩𝙚: 𝙄 𝙤𝙣𝙡𝙮 𝙬𝙤𝙧𝙠 𝙤𝙣 𝙩𝙝𝙞𝙨 𝙨𝙞𝙩𝙚 𝙞𝙣 𝙢𝙮 𝙛𝙧𝙚𝙚 𝙩𝙞𝙢𝙚, 𝙨𝙤 𝙩𝙝𝙖𝙣𝙠 𝙮𝙤𝙪 𝙛𝙤𝙧 𝙮𝙤𝙪𝙧 𝙥𝙖𝙩𝙞𝙚𝙣𝙘𝙚');
-  }, 750);
-}
-
 function msToTime(endTime) {
   var endTimeDate = new Date().toDateString() + ' ' + endTime;
   var date = new Date(endTimeDate).getTime();
@@ -40,7 +26,13 @@ function addGap(Gap) {
 function msToDays(Dose) {
   var today = new Date();
   var doseDate = new Date(Dose);
-  return Math.round((doseDate - today) / (1000 * 60 * 60 * 24));
+  days = Math.round((doseDate - today) / (1000 * 60 * 60 * 24));
+
+// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
+  if (today.getHours() >= 12)
+    days++;
+
+  return days;
 }
 
 function dayDirection(Diff) {
@@ -123,6 +115,14 @@ function admintimes() {
   var shortgap = doseGap(175);
   document.getElementById("shortgap").innerHTML = shortgap;
 
+// Show date 3 months ago, gap between second dose to booster
+  var threeMonth = doseGap(91);
+  document.getElementById("threeMonth").innerHTML = threeMonth;
+
+// Show date 6 months and 1 day ago, gap between second dose to booster
+  var beyondSix = doseGap(176);
+  document.getElementById("beyondSix").innerHTML = beyondSix;
+
 // Show present date in DD MMM YY format as tip for input
   var dateTip = 'e.g. ' + today.getDate() + ' '  + today.toDateString().slice(4, -8) + ' ' + today.toDateString().slice(-2);
   document.getElementById("dateTip").innerHTML = dateTip;
@@ -138,10 +138,6 @@ function dateCopy() {
   secondDose = addGap(56);
   secondDiff = msToDays(secondDose);
 
-// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
-  if (today.getHours() >= 12)
-    secondDiff++;
-
   secondDoseDayDirection = dayDirection(secondDiff);
   secondDiffAbs = Math.abs(secondDiff);
 
@@ -149,32 +145,34 @@ function dateCopy() {
   secondDoseKid = addGap(84);
   secondDiffKid = msToDays(secondDoseKid);
 
-// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
-  if (today.getHours() >= 12)
-    secondDiffKid++;
-
   secondDoseKidDayDirection = dayDirection(secondDiffKid);
   secondDiffKidAbs = Math.abs(secondDiffKid);
 
 // Start of booster dose
-  boosterDose = addGap(175);
+  boosterDose = addGap(91);
   boosterDiff = msToDays(boosterDose);
 
-// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
-  if (today.getHours() >= 12)
-    boosterDiff++;
-
+  boosterDayDirection = dayDirection(boosterDiff);
   boosterDiffAbs = Math.abs(boosterDiff);
 
-// Add a note extension for booster to recognise how early patients are admitted
-  if (boosterDiffAbs < 0.5 || boosterDiff)
-    boosterDayDirection = dayDirection(boosterDiff) + ' - 𝘪𝘯𝘤𝘭. 7 𝘥𝘢𝘺 𝘨𝘳𝘢𝘤𝘦';
-  else
-    boosterDayDirection = dayDirection(boosterDiff);
+// Start of Vaccine Type
+  daysAgoFromToday = msToDays(new Date(document.getElementById("dateInput").value))
+  daysAgoFromTodayAbs = Math.abs(daysAgoFromToday);
+
+  if (daysAgoFromToday >= -175 || daysAgoFromToday <= -91)
+    vaccineType = '𝗣𝗳𝗶𝘇𝗲𝗿 - As 𝙤𝙣 or between 3 to 6 months/(91 to 175 days)';
+  if (daysAgoFromToday < -175)
+    vaccineType = '𝗠𝗼𝗱𝗲𝗿𝗻𝗮 - As more than 6 months/(175 days)';
+  if (daysAgoFromToday > -91)
+    vaccineType = 'N/A - Minimum of 3 months/(91 days)';
+  if (!daysAgoFromToday)
+    vaccineType = '𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
+
+  daysAgoFromTodayDirection = dayDirection(daysAgoFromToday);
 
   alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
   '\n\n' +
-  new Date(document.getElementById("dateInput").value).toDateString() +
+  new Date(document.getElementById("dateInput").value).toDateString() + ' (' + daysAgoFromTodayAbs + daysAgoFromTodayDirection +
   '\n' +
   '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
@@ -182,11 +180,13 @@ function dateCopy() {
   '\n' +
   '      OR' +
   '\n' +
-  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟮-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + secondDoseKidDayDirection +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟲-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + secondDoseKidDayDirection +
   '\n' +
   '      OR' +
   '\n' +
   '𝐁𝐨𝐨𝐬𝐭𝐞𝐫:    ' + boosterDose + ' (' + boosterDiffAbs + boosterDayDirection +
+  '\n' +
+  '𝐕𝐚𝐜𝐜𝐢𝐧𝐞:    ' + vaccineType +
   '\n\n' +
   '              (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
 }
