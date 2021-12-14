@@ -1,3 +1,7 @@
+html {
+  overflow: auto;
+}
+
 body {
   color: #FFF;
 	background: #005EB8;
@@ -89,21 +93,27 @@ div.doseGap {
 div.under18, div.above18, div.booster {
   background: #1c64bd;
   float: left;
+  border-style: dotted;
   border-radius: 25px;
-  border-width: 20px;
+  border-width: 2px;
   border-color: white;
   padding-top: 20px;
-  width: 30vw;
-  height: 215px;
-  margin-left: 30px;
+  width: 30.5vw;
+  height: 200px;
 }
 
 div.under18 {
   overflow: auto;
+  margin-left: 20px;
 }
 
-span.underCohort {
-  font-size: 0.95vw;
+div.above18 {
+  margin-left: 20px;
+}
+
+div.booster {
+  float: right;
+  margin-right: 20px;
 }
 
 span#normgap, span#kidgap, span#shortgap, span#threeMonth, span#beyondSix {
@@ -192,10 +202,10 @@ button.date {
   font-size: 2vw;
   background: #1c64bd;
   color: white;
-  width: 3.75vw;
-  height: 3.75vw;
+  width: 3.5vw;
+  height: 3.5vw;
   margin-right: initial;
-  margin-top: initial;
+  margin-top: -0.5px;
 }
 
 button.date:hover {
@@ -252,14 +262,21 @@ button.manual:hover {
     margin-bottom: 1vw;
   }
 
+  p.updated {
+    font-size: 2vw;
+    margin-left: 3px;
+  }
+
   p#remainTime {
     font-size: 2vw;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
   }
 
   p#topTime {
-    margin-top: 25px;
+    margin-top: 17.5px;
+  }
+
+  p#wait {
+    margin-bottom: -15px;
   }
 
   span#dateTip {
@@ -279,36 +296,23 @@ button.manual:hover {
     font-size: 5vw;
   }
 
-  p.normGap {
-    font-size: 12.5px;
-    margin-top: 5vw;
-    margin-bottom: 2.5px;
-    margin-left: inherit;
-    margin-right: inherit;
+  div.under18, div.above18, div.booster {
+    font-size: 1.5vw;
+    height: 110px;
+    width: 120px;
+    padding-top: 10px;
+    border-style: dotted;
+    border-width: 0.25px;
+    margin-left: 9px;
   }
 
-  p.kidGap {
-    font-size: 10.5px;
-    margin-top: 2px;
-    margin-bottom: 2.5px;
-    margin-right: 30px;
-    margin-left: inherit;
+  div.booster {
+    margin-right: 0;
+    float: left;
   }
 
-  p.shortGap {
-    text-align: left;
-    font-size: 12.5px;
-    margin-top: 2px;
-    margin-left: 45px;
-    margin-right: inherit;
-  }
-
-  span#normgap, span#shortgap {
-    font-size: 15px;
-  }
-
-  span#kidgap {
-    font-size: 12px;
+  span#normgap, span#shortgap, span#kidgap, span#threeMonth, span#beyondSix {
+    font-size: 1.75vw;
   }
 
   a:hover {
@@ -354,8 +358,11 @@ button.manual:hover {
   }
 
   div.menu {
+    margin-top: 1.75vw;
+    background: #1c64bd;
+    text-align: center;
     width: 80vw;
-    height: 215px;
+    height: 210px;
     padding-top: 0.75vh;
     padding-bottom: 0.75vh;
   }
