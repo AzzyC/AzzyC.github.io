@@ -111,17 +111,9 @@ function admintimes() {
   var kidgap = doseGap(84);
   document.getElementById("kidgap").innerHTML = kidgap;
 
-// Show date 6 months ago, gap between second dose to booster
-  var shortgap = doseGap(175);
-  document.getElementById("shortgap").innerHTML = shortgap;
-
 // Show date 3 months ago, gap between second dose to booster
   var threeMonth = doseGap(91);
   document.getElementById("threeMonth").innerHTML = threeMonth;
-
-// Show date 6 months and 1 day ago, gap between second dose to booster
-  var beyondSix = doseGap(176);
-  document.getElementById("beyondSix").innerHTML = beyondSix;
 
 // Show present date in DD MMM YY format as tip for input
   var dateTip = 'e.g. ' + today.getDate() + ' '  + today.toDateString().slice(4, -8) + ' ' + today.toDateString().slice(-2);
@@ -159,15 +151,6 @@ function dateCopy() {
   daysAgoFromToday = msToDays(new Date(document.getElementById("dateInput").value))
   daysAgoFromTodayAbs = Math.abs(daysAgoFromToday);
 
-  if (daysAgoFromToday >= -175 || daysAgoFromToday <= -91)
-    vaccineType = '𝗣𝗳𝗶𝘇𝗲𝗿 - As 𝙤𝙣 or between 3 to 6 months/(91 to 175 days)';
-  if (daysAgoFromToday < -175)
-    vaccineType = '𝗠𝗼𝗱𝗲𝗿𝗻𝗮 - As more than 6 months/(175 days)';
-  if (daysAgoFromToday > -91)
-    vaccineType = 'N/A - Minimum of 3 months/(91 days)';
-  if (!daysAgoFromToday)
-    vaccineType = '𝐃𝐚𝐭𝐞 𝐧𝐨𝐭 𝐢𝐧𝐩𝐮𝐭𝐭𝐞𝐝 𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐥𝐲!';
-
   daysAgoFromTodayDirection = dayDirection(daysAgoFromToday);
 
   alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
@@ -185,8 +168,6 @@ function dateCopy() {
   '      OR' +
   '\n' +
   '𝐁𝐨𝐨𝐬𝐭𝐞𝐫:    ' + boosterDose + ' (' + boosterDiffAbs + boosterDayDirection +
-  '\n' +
-  '𝐕𝐚𝐜𝐜𝐢𝐧𝐞:    ' + vaccineType +
   '\n\n' +
-  '              (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
+  '         (𝙋𝙧𝙚𝙨𝙨 𝙀𝙣𝙩𝙚𝙧 𝙩𝙤 𝙘𝙡𝙤𝙨𝙚 𝙩𝙝𝙞𝙨 𝙬𝙞𝙣𝙙𝙤𝙬)'  );
 }

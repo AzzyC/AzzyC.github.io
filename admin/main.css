@@ -30,7 +30,7 @@ p.updated {
 
 p#topTime {
   margin-top: 0;
-  margin-bottom: 0vw;
+  margin-bottom: 0;
 }
 
 p#wait {
@@ -92,32 +92,31 @@ div.doseGap {
 
 div.under18, div.above18, div.booster {
   background: #1c64bd;
-  float: left;
+  font-size: 1.25vw;
+  overflow: auto;
   border-style: dotted;
   border-radius: 25px;
-  border-width: 2px;
+  border-width: 3px;
   border-color: white;
+  display: inline-block;
   padding-top: 20px;
   width: 30.5vw;
-  height: 200px;
+  height: 15vw;
+  line-height: 1.5vw;
 }
 
 div.under18 {
-  overflow: auto;
-  margin-left: 20px;
-}
-
-div.above18 {
-  margin-left: 20px;
+  float: left;
+  margin-left: 2vw;
 }
 
 div.booster {
+  margin-right: 2vw;
   float: right;
-  margin-right: 20px;
 }
 
 span#normgap, span#kidgap, span#shortgap, span#threeMonth, span#beyondSix {
-  font-size: 17.5px;
+  font-size: 1.5vw;
   color: white;
   background: #004987;
   font-weight: bolder;
@@ -287,7 +286,7 @@ button.manual:hover {
 
   div.doseGap {
     font-size: 2vw;
-    margin-top: 4vw;
+    margin-top: 7.5vw;
     left: 10vw;
   }
 
@@ -297,22 +296,24 @@ button.manual:hover {
   }
 
   div.under18, div.above18, div.booster {
-    font-size: 1.5vw;
-    height: 110px;
-    width: 120px;
-    padding-top: 10px;
-    border-style: dotted;
-    border-width: 0.25px;
-    margin-left: 9px;
+    font-size: 1.7vw;
+    height: 27.5vw;
+    width: 30.5vw;
+    padding-top: 3vw;
+    border-width: 2px;
+    line-height: 2.5vw;
+  }
+
+  div.under18 {
+    margin-left: auto;
   }
 
   div.booster {
-    margin-right: 0;
-    float: left;
+    margin-right: auto;
   }
 
   span#normgap, span#shortgap, span#kidgap, span#threeMonth, span#beyondSix {
-    font-size: 1.75vw;
+    font-size: 2vw;
   }
 
   a:hover {
@@ -358,7 +359,7 @@ button.manual:hover {
   }
 
   div.menu {
-    margin-top: 1.75vw;
+    margin-top: 5vw;
     background: #1c64bd;
     text-align: center;
     width: 80vw;
