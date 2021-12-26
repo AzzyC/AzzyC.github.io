@@ -1,3 +1,4 @@
+// Convert milliseconds difference between current to shift end time, into human-readable format
 function msToTime(endTime) {
   var endTimeDate = new Date().toDateString() + ' ' + endTime;
   var date = new Date(endTimeDate).getTime();
@@ -12,29 +13,33 @@ function msToTime(endTime) {
   return hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s left";
 }
 
+// Deduct specified days from current date
 function doseGap(Gap) {
   var today = new Date();
   today.setDate(today.getDate() - Gap);
   return today.toDateString();
 }
 
+// Add specified days onto current date
 function addGap(Gap) {
   var doseDate = new Date(document.getElementById("dateInput").value);
   return doseDate.toDateString(doseDate.setDate(doseDate.getDate() + Gap));
 }
 
+// Convert from milliseconds into days
 function msToDays(Dose) {
   var today = new Date();
   var doseDate = new Date(Dose);
   days = Math.round((doseDate - today) / (1000 * 60 * 60 * 24));
 
-// Add day if time is after 12-hour clock, to get correct day conversion from milliseconds
+// Add 1-day if curent time is after 12-hour clock, to get correct conversion
   if (today.getHours() >= 12)
     days++;
 
   return days;
 }
 
+// Easier to display direction of days in words than showing/lacking a '-' symbol
 function dayDirection(Diff) {
   if (Diff >= 0.5)
     daysDirection = ' days 𝐭𝐨 𝐠𝐨)';
@@ -65,6 +70,7 @@ function admintimes() {
   document.getElementById("currentTime").innerHTML = current;
 
 // Start of shift remaining time section
+// Concatenate hours and minutes to easily compare times
   var cathourmin = "" + today.getHours() + minutes;
 
   if ( cathourmin < 745 || cathourmin >= 2030)
@@ -100,18 +106,18 @@ function admintimes() {
 
   document.getElementById("waitTime").innerHTML = wait;
 
-// Show times on tab title, no need to switch tabs to view
+// Dynamic tab title w/ refreshing times
   document.title = 'ᴀᴅᴍɪɴ ┇ ' + current + ' ┇ ' + wait;
 
-// Work the date 8 weeks ago, as that is the protocol for gap between both doses
+// Show date 8 weeks ago - 2nd Dose
   var normgap = doseGap(56);
   document.getElementById("normgap").innerHTML = normgap;
 
-// Show date 12 weeks ago, as that is the protocol for gap between both doses, for 17-17 y/o
+// Show date 12 weeks ago - 2nd Dose (12-17 y/o)
   var kidgap = doseGap(84);
   document.getElementById("kidgap").innerHTML = kidgap;
 
-// Show date 3 months ago, gap between second dose to booster
+// Show date 13 weeks ago - Booster
   var threeMonth = doseGap(91);
   document.getElementById("threeMonth").innerHTML = threeMonth;
 
@@ -126,44 +132,46 @@ function admintimes() {
 function dateCopy() {
   var today = new Date();
 
-// Start of second dose
+  userInput = new Date(document.getElementById("dateInput").value)
+
+// Start of: Days Diff between Today and User Inputted Date
+  daysAgoFromToday = msToDays(userInput)
+
+  daysAgoFromTodayAbs = Math.abs(daysAgoFromToday);
+  daysAgoFromTodayDirection = dayDirection(daysAgoFromToday);
+
+// Start of: Date after add 56 days - For 2nd Dose
   secondDose = addGap(56);
   secondDiff = msToDays(secondDose);
 
   secondDoseDayDirection = dayDirection(secondDiff);
   secondDiffAbs = Math.abs(secondDiff);
 
-// Start of second dose (12-17)
+// Start of: Date after add 84 days - For 2nd Dose (12-17 y/o)
   secondDoseKid = addGap(84);
   secondDiffKid = msToDays(secondDoseKid);
 
   secondDoseKidDayDirection = dayDirection(secondDiffKid);
   secondDiffKidAbs = Math.abs(secondDiffKid);
 
-// Start of booster dose
+// Start of: Date after add 91 days - For Booster
   boosterDose = addGap(91);
   boosterDiff = msToDays(boosterDose);
 
   boosterDayDirection = dayDirection(boosterDiff);
   boosterDiffAbs = Math.abs(boosterDiff);
 
-// Start of Vaccine Type
-  daysAgoFromToday = msToDays(new Date(document.getElementById("dateInput").value))
-  daysAgoFromTodayAbs = Math.abs(daysAgoFromToday);
-
-  daysAgoFromTodayDirection = dayDirection(daysAgoFromToday);
-
   alert('𝐁𝐞𝐥𝐨𝐰 𝐚𝐫𝐞 𝐝𝐚𝐭𝐞𝐬 𝐟𝐨𝐫 𝐰𝐡𝐞𝐧 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐢𝐬 𝐞𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐬𝐮𝐛𝐬𝐞𝐪𝐮𝐞𝐧𝐭 𝐝𝐨𝐬𝐞, 𝐛𝐚𝐬𝐞𝐝 𝐨𝐧:' +
   '\n\n' +
-  new Date(document.getElementById("dateInput").value).toDateString() + ' (' + daysAgoFromTodayAbs + daysAgoFromTodayDirection +
+  userInput.toDateString() + ' (' + daysAgoFromTodayAbs + daysAgoFromTodayDirection +
   '\n' +
   '╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍' +
   '\n\n' +
-  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + secondDoseDayDirection +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟲-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + secondDoseKidDayDirection +
   '\n' +
   '      OR' +
   '\n' +
-  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞 (𝟭𝟲-𝟭𝟳 𝘆/𝗼):  ' + secondDoseKid + ' (' + secondDiffKidAbs + secondDoseKidDayDirection +
+  '𝟐ɴᴅ 𝐃𝐨𝐬𝐞:  ' + secondDose + ' (' + secondDiffAbs + secondDoseDayDirection +
   '\n' +
   '      OR' +
   '\n' +
